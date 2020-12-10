@@ -1,3 +1,6 @@
+# Dynamic Scroll to element
+This build vertical tab bar which can be used to smoothly navigate to the chosen elements by clicking on the approriate tab. When dealing with long webpages it is more convenient to choose which title to explore from a tab selection rather than scrolling to the title. This can be done using scroll to element function implemented in JavaScript.
+
 # How it works
 
 ![Scroll to element navigation found in Cancer Care explorer](https://github.com/epi-interactive/Cancer_care-navigation/blob/master/navigation%20cancer%20care.PNG)
