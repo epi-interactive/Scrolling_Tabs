@@ -1,6 +1,6 @@
-
-Scroll to element navigation found in Cancer Care explorer
 # How it works
+Scroll to element navigation found in Cancer Care explorer
+
 ![alt text](https://github.com/epi-interactive/Cancer_care-navigation/blob/master/navigation%20cancer%20care.PNG?raw=true)
 1. Create a vertical tabs input inside a sidebar page. The vertical tabs contain a list of names of all tabs.
 ![alt text](https://github.com/epi-interactive/Cancer_care-navigation/blob/master/vertical%20tab.PNG?raw=true)
