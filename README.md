@@ -1,6 +1,6 @@
 # How it works
 
-![Scroll to element navigation found in Cancer Care explorer](https://github.com/epi-interactive/Cancer_care-navigation/blob/master/navigation%20cancer%20care.PNG?raw=true)
+![Scroll to element navigation found in Cancer Care explorer](https://github.com/epi-interactive/Cancer_care-navigation/blob/master/navigation%20cancer%20care.PNG)
 1. Create a vertical tabs input inside a sidebar page. The vertical tabs contain a list of names of all tabs.
  ``` r
     createFlexSidebarPage(ns("overview"),
