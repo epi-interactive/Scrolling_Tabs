@@ -1,0 +1,1817 @@
+/* 
+========================================================================================================================================
+========================================================= GLOBAL STYLES BEGIN =========================================================
+========================================================================================================================================
+*/
+
+/*
+---------------------------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------- LOADER / SPINNER ----------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------------------------
+*/
+
+
+html, body{
+  font-family: 'Fira Sans', sans-serif;
+  height: 100%;
+  scroll-behavior: smooth;
+  background-color: #fbeec5;
+  color: #585454;
+}
+
+#loadingOverlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1001;
+    background: rgba(255,255,255,0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: opacity ease 0.35s, visibility ease 0.35s;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.shiny-busy #loadingOverlay{
+    opacity: 1;
+    visibility: visible;
+}
+
+#loadingSpinner{
+  font-size: 10em;
+}
+
+body > .form-group.shiny-input-container {
+    margin: 0;
+    height: 0;
+}
+
+
+/*
+---------------------------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------- BUTTONS -------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------------------------
+*/
+
+.btn-cca-primary {
+    color: #ffffff;
+    background-color: #0ab58f;
+    border-color: #0ab58f;
+}
+
+.info-btn {
+    display: inline-block;
+    height: 24px;
+    width: 24px;
+    margin-left: 5px;
+    vertical-align: middle;
+    cursor: pointer;
+}
+
+#close {
+    display: inline-block;
+}
+
+#close a {
+    display: inline-block;
+    margin-bottom: 0;
+    font-weight: normal;
+    text-align: center;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    background-image: none;
+    border: 1px solid transparent;
+    white-space: nowrap;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    border-radius: 0;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    color: #ffffff;
+    background-color: #0ab58f;
+    border-color: #0ab58f;
+}
+
+
+
+
+/*
+---------------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------- PAGE LAYOUT -------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------------------------
+*/
+
+.navPage {
+    flex: 1 0 auto;
+    display: -ms-flexbox;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.flex-page, .flex-page-row {
+    flex: 1 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.flex-page {
+
+}
+
+.flex-page-row {
+    flex-direction: row;
+}
+
+.flex-main {
+        width: 80%;
+    display: flex;
+    flex-direction: column;
+    margin-left: 20%;
+}
+
+.flex-container {
+  display: flex;
+  margin:  0;
+  align-items: center;
+}
+
+.content-pad {
+    overflow: hidden;
+}
+
+.content-pad-30 > div {
+    padding-left: 30px;
+    padding-right: 40px;
+}
+
+.content-pad > div {
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+.sidebar-filters {
+    /*margin-bottom: 140px;*/
+}
+
+.shiny-output-error-validation {
+    color: #2c463b;
+    height: auto!important;
+    background: #ffffff;
+    padding: 10px;
+    border: solid 3px #2c463b;
+    margin: 40px 0;
+    font-size: 18px;
+    overflow: hidden;
+    display: inline-flex;
+    width: 100%;
+    align-items: center;
+}
+
+.shiny-output-error-validation:before {
+    color: #2c463b;
+    content: "\f071";
+    font-family: FontAwesome;
+    padding-right: 10px;
+    transition: color ease 0.35s;
+    font-size: 40px;
+}
+
+.sticky {
+    position: fixed;
+}
+
+/*
+---------------------------------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------- MODAL -------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------------------------
+*/
+
+.close {
+    font-size: 35px;
+    opacity: 0.7;
+}
+
+
+
+
+/*
+---------------------------------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------- NAV TABS -------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------------------------
+*/
+
+ul.nav.nav-pills {
+    margin-bottom: 20px;
+}
+
+.nav-pills>li.active>a, .nav-pills>li.active>a:hover, .nav-pills>li.active>a:focus {
+    border-color: #0ab58f;
+    background-color: #0ab58f;
+}
+
+.nav-pills>li>a {
+    border-radius: 0;
+    background-color: #fff;
+    color: #0ab58f;
+    font-weight: bold;
+    border: solid 1px #0ab58f;
+    padding: 5px;
+}
+
+.nav-pills>li+li {
+    margin-left: 10px;
+}
+
+.nav>li>a:hover, .nav>li>a:focus {
+    background: transparent;
+}
+
+
+/*
+---------------------------------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------- HEADER -------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------------------------
+*/
+
+.header {
+    background-color: #585454;
+    color: #fff7ed;
+    width: 100%;
+    padding: 15px 40px;
+    overflow: hidden;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+}
+
+.white-links{
+  display: flex;
+  margin-top: 10px;
+  font-weight: bold;    
+  font-size: 16px;
+}
+
+.white-links li a:hover{
+  background-color:transparent;
+  color: #ddd;
+}
+
+.white-links a{
+  color: #fff7ed;
+  font-size: 16pt;
+}
+
+.white-links > li {
+    border-top: solid 2px #fff7ed;
+    margin-right: 20px;
+    float: none;
+}
+
+.navbar-collapse {
+    padding: 0 40px;
+}
+
+.navbar {
+    min-height: 30px;
+    margin-bottom: 0;
+    border: none;
+    border-radius: 0;
+}
+
+.navbar-moh {
+    #background: #caab8e url(/img/nav_decoration.svg) no-repeat bottom right;
+    background-size: 50%;
+    width: 100%;
+    
+}
+
+.navbar-moh .navbar-nav>.active>a, .navbar-moh .navbar-nav>.active>a:hover, .navbar-moh .navbar-nav>.active>a:focus {
+    font-weight: bold;
+}
+
+.navbar-nav>li>a {
+    padding: 5px 0;
+}
+
+.navbar-small>li>a {
+    padding: 5px 20px;
+}
+
+.header-wrapper {
+    width: 100%;
+    height: 160px;
+    top: 0;
+    position: fixed;
+    box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+
+/*
+---------------------------------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------- SIDEBAR --------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------------------------
+*/
+
+.flex-sidebar {
+    background-color: #f9c55a;
+    flex-direction: column;
+    display: flex;
+    width: 20%;
+    height: calc(100% - 0px);
+    position: fixed;
+    left: 0;
+    justify-content: space-between;
+}
+
+.header-page-sidebar {
+    background-color: #c2d9ba;
+    flex-direction: column;
+    display: flex;
+    width: 20%;
+}
+
+.panel.filter-panel {
+    margin-bottom: 0;
+    background-color: transparent;
+    border-radius: 0;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+.filter-panel {
+    padding: 25px 0;
+    color: #fff;
+}
+.sidebar-underline {
+    border-bottom: solid 2px #808285;
+}
+
+.filter-title.interactive {
+    cursor: pointer;
+}
+
+.filter-title {
+    font-size: 17px;
+    color: #FFF;
+    transition: color ease 0.35s;
+    display: inline-block;
+    font-weight: bold;
+    padding-left: 10px;
+    padding-bottom: 10px;
+}
+
+.filter-body {
+    padding-left: 10px;
+    color: #585454;
+}
+
+.filter-body .form-group {
+    margin: 15px 0;
+}
+
+.filter-body .control-label {
+    color: #585454;
+    font-weight: normal;
+}
+
+button.btn.btn-moh {
+    color: #fff;
+    background: #2c463b;
+    border: solid 1px #fff;
+    white-space: normal;
+}
+
+.pad-left-10 {
+    padding-left: 10px;
+}
+
+.vertical-tabs.sidebar-fixed {
+  position: fixed;
+}
+
+.fixed-scroll-wrapper {
+  overflow-y: auto;
+}
+
+/*
+---------------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------ FOOTER -------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------------------------
+*/
+
+#footer{
+  margin-top: auto;
+  text-align: left;
+  padding: 40px;
+}
+
+
+/*
+---------------------------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------- TYPOGRAPHY ----------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------------------------
+*/
+
+h1, h2, h3, h4, h5 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
+}
+
+.mh1{
+  font-size: 48px;
+  font-family: 'Montserrat';
+  font-weight: bold;
+}
+
+.mh2{
+  font-size: 24px;
+  font-family: 'Montserrat';
+  font-weight: bold;
+  padding-bottom: 15px;
+}
+
+.mh3{
+  font-size: 24px;
+  font-family: 'Montserrat';
+  font-weight: bold;
+  padding-bottom: 10px;
+}
+
+.mh4{
+  margin-top: 30px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+h4 {
+  font-size: 22px;
+}
+
+.title{
+  color: #2c463b;
+}
+
+.section-title {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.chart-title {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.table-title {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.header-title {
+    display: inline-block;
+    font-family: 'Montserrat', sans-serif;
+    color: #fff7ed;
+    font-size: 25px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 8px;
+    vertical-align: middle;
+}
+
+.static-text {
+    height: 34px;
+    padding: 6px 12px 6px 0;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #585454;
+    font-weight: bold;
+}
+
+.indicator-info-app-title {
+    color: #585454;
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: underline;
+    text-underline-position: under;
+}
+
+.static-title {
+    color: #585454;
+    font-size: 27px;
+    font-weight: bold;
+    margin: 15px 0;
+}
+
+.static-l1 {
+    color: #585454;
+    font-size: 17px;
+    font-weight: bold;
+    border-bottom: solid 1px #585454;
+    margin-bottom: 15px;
+}
+
+
+/* 
+========================================================================================================================================
+========================================================= GLOBAL STYLES END ========================================================   
+========================================================================================================================================
+*/
+
+/* 
+========================================================================================================================================
+========================================================= SPLASH STYLES BEGIN ========================================================   
+========================================================================================================================================
+*/
+
+
+/*
+---------------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------- SPLASH HEADER -----------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------------------------
+*/
+.splash-header {
+    background-size: cover;
+    /*min-height: 400px;*/
+    overflow: auto;
+    position: relative;
+    color: white;
+}
+
+.splash-top {
+      overflow: auto;
+    margin: 0;
+}
+
+.splash-logo {
+    width: 15%;
+    min-width: 150px;
+}
+
+.splash-header h1 {
+    font-size: 62px;
+    color: #fff7ed;
+}
+
+.splash-header h2 {
+    font-size: 24px;
+}
+
+.align-image-left {
+    margin-left: -3.5%;
+}
+
+.splash-pub-date {
+    display: inline-block;
+    border-top: solid 5px #0ab58f;
+    font-size: 32px;
+    font-weight: bold;
+    padding: 10px 0;
+    margin: 10px 0;
+    color: #585454;
+}
+
+.splash-header-subtitles {
+  color: #585454;
+}
+
+.nz-govt-logo {
+    position: relative;
+    width: 200px;
+    margin: 30px 0;
+    float: right;
+}
+
+
+/*
+---------------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------- SPLASH BODY -------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------------------------
+*/
+
+.card-container {
+    flex: 1 0 auto;
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    padding: 0 1%;
+    margin: 20px 0;
+}
+
+.card h3 {
+  margin: 0;
+}
+
+.card {
+    margin: 20px;
+    padding: 25px;
+    flex: 1 0 auto;
+    transition: all ease-in-out 0.15s;
+    cursor: pointer;
+    width: 0;
+    background: #ffffff;
+    border-top: solid 4px #2c463b;
+    color: #333;
+}
+
+.card:hover {
+  color: #333;
+}
+
+.card img {
+    height: 150px;
+    /*width: 100%;*/
+    margin: 20px auto;
+    display: block;
+}
+
+.splash-download-section {
+  margin: 0 5%;
+}
+
+.splash-bottom-link {
+    width: 33%;
+}
+
+.splash-download {
+    margin: 0 40px;
+    display: block;
+}
+
+.splash-download-title {
+    color: #2c463b;
+}
+
+.splash-download-img {
+    float: left;
+    width: 64px;
+    height: 64px;
+    padding: 0 5px;
+}
+
+.splash-download-p {
+    overflow: hidden;
+    color: #444;
+}
+
+/* 
+========================================================================================================================================
+========================================================= SPLASH STYLES END ==========================================================   
+========================================================================================================================================
+*/
+
+/* 
+========================================================================================================================================
+=================================================== EXPLORE INDICATORS STYLES BEGIN ====================================================
+========================================================================================================================================
+*/
+
+/*
+---------------------------------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------- SUMMARY --------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------------------------
+*/
+.summary {
+    display: flex;
+    align-items: start;
+    width: 90%;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.indicator-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+}
+
+.main-details {
+    margin: 0 30px;
+    width: 40%;
+}
+
+.info-title {
+    color: #585454;
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    width: 70%;
+}
+
+.indicator-links-title {
+    color: #585454;
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.description {
+    width: 40%;
+}
+
+.commentary {
+    margin-left: 85px;
+    margin-bottom: 30px;
+}
+
+.download-area {
+    margin-top: 40px;
+    margin-bottom: 20px;
+    text-align: right;
+}
+
+.download-links {
+    display: inline-block;
+    vertical-align: top;
+    text-align: left;
+    width: 118px;
+}
+
+.download-container {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.download-links a,
+.print-view-area a {
+    display: block;
+    color: #0ab58f;
+}
+
+.download-links > div {
+    font-weight: bold;
+    color: #2c463b;
+}
+
+.print-view-area {
+    margin-right: 20px;
+    
+}
+
+.print-view-area a {
+  font-weight: normal;
+}
+
+.print-area-container {
+      display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-top: 20px;
+}
+
+
+/*
+---------------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------ CHARTS -------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------------------------
+*/
+
+.funnel-chart-wrapper, .bar-chart-wrapper {
+    width: 100%;
+    margin-bottom: 25px;
+}
+
+text.annotation-text[data-unformatted="S"] {
+    display: none;
+}
+
+
+.widthElement > div {
+      display: block;
+    height: 0 !important;
+}
+
+
+
+.regional-comparison {
+    border-bottom: black 3px solid;
+}
+
+.region-comparison-options {
+  margin: 20px 0;
+}
+
+.half-charts {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.national-wrapper {
+  width: 30%;
+  margin-right: 2.5%; 
+  background: #fff;
+}
+
+.national {
+    background: #fff;
+    margin-right: 2.5%;
+    padding: 20px;
+    display: flex;
+    flex-direction: row-reverse;
+    position: relative;
+}
+
+.timeseries {
+    width: 65%;
+    background: #fff;
+    margin-left: 2.5%;
+    padding: 15px;
+}
+
+.timeseries .errorbar:nth-of-type(1) {
+    display: none;
+}
+
+.gender, .age {
+    width: 47.5%;
+    background: #fff;
+    margin-top: 5%;
+    padding: 15px;
+}
+
+.gender {
+  margin-right: 2.5%;
+}
+
+.age {
+  margin-left: 2.5%;
+}
+
+.ethnicity, .ndep {
+    width: 100%;
+    background: #fff;
+    margin-top: 5%;
+        padding: 15px;
+}
+
+.gender, .age, .ethnicity, .ndep {
+  background-color: #fff7ed;
+}
+
+.charts-main .chart-title {
+  margin-bottom: 0;
+}
+
+.charts-main, .tables-main {
+    margin-top: 30px;
+}
+
+.charts-main .scatterlayer .trace .js-line {
+  transform-origin: center;
+    transform: scaleX(3.1);
+    stroke-width: 3px !important;
+}
+
+.main-svg {
+  background: transparent !important;
+}
+
+.annotation-wrapper {
+        width: 50%;
+    position: absolute;
+    font-size: 20px;
+    z-index: 1;
+    height: 90%;
+    color: #002e6e;
+            right: 0px;
+}
+
+#exploreIndicators-nationalAnnotation {
+    height: 100%;
+}
+
+.annotation {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: center;
+    color: #595454;
+}
+
+.annotation p {
+    font-size: 16px;
+}
+
+.annotation .big {
+    font-weight: bold;
+    font-size: 40px;
+    line-height: normal;
+}
+
+/*
+---------------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------ TABLES -------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------------------------
+*/
+
+.chart-subtitle {
+    margin-bottom: 40px;
+    width: 40%;
+}
+
+.table-controls {
+    display: flex;
+    flex-direction: row;
+}
+
+.table-controls div {
+    margin-right: 30px;
+}
+
+table.dataTable.cca-table {
+    margin-bottom: 0;
+}
+
+table.dataTable.cca-table > tbody > tr {
+    background-color: transparent !important;
+}
+    
+.regional-table {
+  min-height: 30vh;
+  margin-bottom: 40px;
+}
+
+table.dataTable thead tr:first-of-type th[colspan="1"] {
+    border-bottom: none;
+}
+
+table.dataTable thead th[rowspan="1"] {
+    border-bottom: none;
+}
+
+table.dataTable thead th[colspan="1"] {
+    border-bottom: 1px solid #111;
+}
+
+table.dataTable thead tr:first-of-type th:first-of-type {
+    border-bottom: 1px solid #111;
+}
+
+#exploreIndicators-tabTables .dataTables_scrollBody tr td:nth-of-type(5) {
+    padding: 10px 18px;
+}
+
+
+
+.notes {
+    margin-top: 35px;
+}
+
+/* 
+========================================================================================================================================
+===================================================== EXPLORE INDICATORS STYLES END ====================================================
+========================================================================================================================================
+*/
+
+/* 
+========================================================================================================================================
+========================================================== MY REGION STYLE BEGIN =======================================================
+========================================================================================================================================
+*/
+
+
+.filter-group label span {
+    color: #585454;
+}
+
+.national-chart-header,
+.national-table-header {
+  align-items: start; 
+  justify-content: space-between;
+}
+
+.show-checkbox .checkbox {
+  margin: 0;
+}
+
+.show-checkbox {
+  display: flex;
+      margin-right: 5%;
+  
+}
+
+.national-chart-legend {
+  margin-bottom: 10%; 
+  height: 130px
+}
+
+.check-label {
+    margin-right: 20px;
+    font-weight: bold;
+    color: #0a2e6e;
+}
+
+.chart-legend {
+    display: flex;
+    margin: 10px 0;
+}
+
+
+.color-square {
+    height: 2rem;
+    width: 4rem;
+    display: block;
+    margin-right: 20px;
+}
+
+.chart-sidepanel {
+    margin-left: 5%;
+    margin-top: 20px;
+    float: left;
+}
+
+.show-checkbox .shiny-input-container:not(.shiny-input-container-inline) {
+  width: unset;
+}
+
+.tables-main .chart-title {
+  margin-bottom: 0;
+}
+
+
+.sidebar-footer {
+    background: #2c463b;
+    height: 60px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 5;
+    margin-top: auto;
+}
+
+.sidebar-footer div {
+        font-size: 16px;
+    font-weight: 600;
+    color: #fff7ed;
+    /*padding: 10%;*/
+    text-align: center;
+}
+
+tbody tr {
+    display: table-row;
+}
+
+.clickable-row-cell {
+    transform: translateX(10px);
+    cursor: pointer;
+}
+
+.clickable-row-cell::before {
+    font-family: FontAwesome;
+    color: green;
+    position: absolute;
+    transform: translate(-16px);
+}
+
+.clickable-row-cell.plus::before {
+    content: "\f067";
+}
+
+.clickable-row-cell.minus::before {
+    content: "\f068";
+}
+
+.indented-cell {
+  transform: translateX(10px);
+}
+
+#myRegion-tabTables .dataTables_scrollBody tr td:nth-of-type(7) {
+    padding: 10px 16px;
+}
+
+.nation-chart-header .show-checkbox .check-label {
+  color: #333;
+}
+
+
+/* 
+========================================================================================================================================
+============================================================ MY REGION STYLES END ======================================================
+========================================================================================================================================
+*/
+
+/* 
+========================================================================================================================================
+======================================================= INDICATOR OVERVIEW STYLES BEGIN ================================================
+========================================================================================================================================
+*/
+
+.overview-body {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.overview-item {
+    width: 50%;
+    padding: 10px;
+}
+
+.overview-item-header {
+    display: flex;
+    align-items: center;
+}
+
+.overview-item-icon {
+    width: 40px;
+    height: 40px;
+    background: #0ab58f;
+    border-radius: 20px;
+}
+
+.overview-item-title {
+    font-size: 20px;
+    margin-left: 10px;
+    color: #585454;
+}
+
+.overview-item-title a, .overview-item-title a:hover {
+    color: #585454;
+}
+
+.overview-item-body {
+    padding-left: 50px;
+}
+
+.indicator-item {
+  cursor: pointer;
+}
+
+/* 
+========================================================================================================================================
+======================================================= INDICATOR OVERVIEW STYLES END ==================================================
+========================================================================================================================================
+*/
+
+/* 
+========================================================================================================================================
+========================================================= METHODOLOGY STYLES START =====================================================
+========================================================================================================================================
+*/
+
+.vertical-tab {
+    width: 100%;
+    padding: 10px 15px;
+    border-bottom: 1px solid #585454;
+    color: #585454;
+    cursor: pointer;
+}
+
+.vertical-tab.active {
+    background: #fff;
+    font-weight: bold;
+    border-bottom: none;
+}
+
+/* 
+========================================================================================================================================
+========================================================= METHODOLOGY STYLES END ======================================================
+========================================================================================================================================
+*/
+
+/* 
+========================================================================================================================================
+====================================================== DOWNLOAD DATASETS STYLES START ==================================================
+========================================================================================================================================
+*/
+
+.static-dl-section {
+    display: flex;
+    margin-bottom: 40px;
+}
+
+.static-dl-section .left {
+    width: 90px;
+    text-align: center;
+}
+
+.static-dl-section .right {
+    width: 80%;
+}
+
+
+/* 
+========================================================================================================================================
+======================================================== DOWNLOAD DATASETS STYLES END ==================================================
+========================================================================================================================================
+*/
+
+/* 
+========================================================================================================================================
+========================================================= OVERVIEW PAGE STYLES START ===================================================
+========================================================================================================================================
+*/
+
+.vertical-tabs {
+  padding: 30px; 
+ position: fixed;
+    width: 20%;
+}
+
+/*#overview-overview .flex-sidebar,
+#downloadDataSets-downloadDataSets .flex-sidebar,
+#methodology-methodology .flex-sidebar {
+      min-height: calc(100vh - 105px);
+}*/
+
+.overview-title-section {
+  margin-bottom: 40px;
+}
+
+.overview-title-section .overview-title{
+  margin-bottom: 0;
+  margin-top: 30px;
+}
+
+.overview-subtitle {
+    color: #585454;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.overview-section-title {
+  color: #585454;
+  font-size: 16px;
+  font-weight: bold;
+  border-bottom: 1px solid #585454;
+  margin-bottom: 5px;
+}
+
+.overview-section-title.no-line {
+  border: none;
+  
+}
+
+.overview-section {
+  width: 75%;
+  margin-bottom: 40px;
+}
+
+.overview-section.wide {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.overview-section-content {
+      padding-right: 10%;
+}
+
+.overview-content-group {
+    margin-bottom: 50px;
+}
+
+.overview-section img {
+    margin: 20px 0;
+}
+
+/*
+---------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------- INDICATOR TABLE --------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------------------------
+*/
+
+
+
+
+.indicator-table {
+    display: flex;
+        width: 1050px;
+}
+
+.flex-column {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.table-heading {
+    background: #737373;
+    text-align: center;
+    padding: 10px;
+    color: #fff;
+    font-weight: bold;
+    white-space: nowrap;
+        margin: 5px;
+}
+
+.heading-set {
+  width: 30%;
+}
+
+.heading-indicator {
+  width: 50%;
+}
+
+.heading-measure {
+  width: 100%;
+}
+
+.table-set {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    background: #2c463b;
+    font-weight: bold;
+    color: #fff7ed;
+    flex-grow: 1;
+    margin: 5px;
+    
+}
+
+.set-text {
+    transform: rotate(-90deg);
+}
+
+.table-indicator {
+  text-align: center;
+    display: flex;
+    justify-content: center;
+    padding: 30px;
+    background: #0ab58f;
+    font-weight: bold;
+    color: #fff7ed;
+        height: 140px;
+            margin: 5px;
+                align-items: center;
+}
+
+.table-measures {
+    display: flex;
+    flex-grow: 1;
+}
+
+.measure-container {
+    /*display: flex;
+    flex-direction: column;*/
+    height: 140px;
+    width: 33%;
+    max-width: 32%;
+    justify-content: center;
+    margin: 5px 5px 5px 5px;
+}
+
+.table-measure {
+    padding: 15px;
+    background: #c2d9ba;
+    color: #585454;
+    text-align: center;
+    height: 62px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.table-tumour-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.table-tumour {
+    text-align: center;
+    padding: 3px 10px;
+    width: 33%;
+    background: #9ecfcf;
+    color: #585454;
+    margin: 10px 5px 0 0;
+}
+
+.table-line {
+    height: 2px;
+    background: #aaa;
+    /*margin: 0 5px;*/
+    width: 100%;
+}
+
+
+/* 
+========================================================================================================================================
+=========================================================== OVERVIEW PAGE STYLES END ===================================================
+========================================================================================================================================
+*/
+
+/*
+---------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------- HELP PAGE BEGIN ---------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------------------------
+*/
+
+.help-image {
+    width: 100%;
+    display: flex;
+    margin: 20px 0 40px;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    color: #aaa;
+}
+
+.help-image img {
+  margin: 0;
+  box-shadow: 0 0 20px 5px #ddd;
+  width: 100%;
+}
+
+#help-help .overview-section {
+  width: 80%;
+}
+
+
+/*
+---------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------- HELP PAGE END ---------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------------------------
+*/
+
+/* 
+========================================================================================================================================
+====================================================== EXPLANATIONS STYLES START ==================================================
+========================================================================================================================================
+*/
+
+#explanations-page .overview-section-title {
+      margin-bottom: 15px;
+}
+
+
+/* 
+========================================================================================================================================
+====================================================== EXPLANATIONS STYLES START ==================================================
+========================================================================================================================================
+*/
+
+
+/* 
+========================================================================================================================================
+==================================================== MEDIA QUERIES WIDTH < 768px BEGIN =================================================
+========================================================================================================================================
+*/
+
+@media (max-width: 768px){
+  
+/*
+---------------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------- PAGE LAYOUT -------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------------------------
+*/
+  
+.flex-main {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    margin-left: 0;
+}
+  
+.flex-page-row {
+    flex-direction: column;
+}
+
+.flex-sidebar {
+  width: 100%;
+  position: relative;
+
+}
+
+.sidebar-footer {
+        margin-top: 0;
+}
+
+.sticky {
+  position: static;
+  top: 0px;
+}
+
+.header-wrapper {
+  position: absolute;
+}
+
+
+
+  
+/*
+---------------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------ PAGE: SPLASH -------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------------------------
+*/
+  .card {
+      border: solid 1px #A7A9AC;
+      padding: 10px;
+      box-shadow: 0 0 5px 0px rgba(0, 0, 0, 0.5);
+      margin: 20px 0;
+      padding: 10px;
+      flex: 1 0 auto;
+      transition: all ease-in-out 0.15s;
+      cursor: pointer;
+      width: 100%;
+  }
+  
+  .splash-header .flex-container {
+    margin: 0;
+  }
+  
+  .splash-logo {
+    display: none;
+  }
+  
+  .card-container {
+    flex: 1 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+    padding: 40px;
+}
+    
+    .splash-bottom-link {
+    width: 100%;
+}
+
+   .splash-download-section {
+    margin: 0 5%;
+    flex-direction: column;
+}
+
+
+#footer {
+    padding: 20px 8%;
+}
+
+
+/*
+---------------------------------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------- PAGE: EXPLORE INDICATORS ---------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------------------------
+*/
+
+.header-title {
+  display: none;
+}
+
+.summary {
+  flex-direction: column;
+}
+
+.summary .main-details, .description {
+  width: 100%;
+}
+
+.main-details {
+  margin: 0;
+}
+
+.info-title {
+    width: 100%;
+}
+
+.commentary {
+  margin: 0;
+}
+
+/* CHARTS */
+
+.half-charts div {
+    width: 100%;
+        margin: 20px 0;
+}
+
+.funnel-chart-wrapper .plotly .legend {
+  transform: translate(25%,-10px);
+}
+
+div.annotation-wrapper {
+  width: 50%;
+  margin: 0;
+}
+
+/* TABLES */
+
+.chart-subtitle {
+  width: 100%;
+}
+
+.table-controls {
+  flex-direction: column;
+}
+
+/*
+---------------------------------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------- PAGE: MY REGION ---------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------------------------
+*/
+
+.national-chart-header, .national-table-header {
+  flex-direction: column;
+  
+}
+
+.chart-sidepanel {
+  width: 100%;
+}
+
+.comparison-chart {
+  transform: translateX(-10%);
+}
+
+.national-chart-legend {
+  margin: 0 0 30px 0;
+  height: auto;
+}
+
+.comparison-region {
+    margin: 0;
+    float: none;
+}
+
+.comparison-region label {
+  color: #0a2e6e;
+}
+
+/*
+---------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------- PAGE: OVERVIEW ---------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------------------------
+*/
+
+.overview-tabs {
+  position: relative;
+  top: 0;
+}
+
+.overview-section {
+  width: 100%;
+}
+
+.overview-section img {
+  width: 100%;
+}
+
+#overview-overview .flex-sidebar {
+  display: none;
+}
+
+#help-help .flex-sidebar {
+  display: none;
+}
+
+#help-help .overview-section {
+  width: 100%;
+}
+
+
+
+}
+
+/* 
+========================================================================================================================================
+==================================================== MEDIA QUERIES WIDTH < 768px END ===================================================
+========================================================================================================================================
+*/
+@media (max-width: 992px) {
+  
+  /*
+---------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------- PAGE LAYOUT ---------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------------------------
+*/
+  
+  
+    .sticky {
+  position: static;
+  top: 0px;
+}
+  
+/*
+---------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------- PAGE: SPLASH ---------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------------------------
+*/
+  
+    .card {
+      border: solid 1px #A7A9AC;
+      padding: 10px;
+      box-shadow: 0 0 5px 0px rgba(0, 0, 0, 0.5);
+      margin: 20px 0;
+      padding: 10px;
+      flex: 1 0 auto;
+      transition: all ease-in-out 0.15s;
+      cursor: pointer;
+      width: 100%;
+  }
+  
+  .splash-header .flex-container {
+    margin: 0;
+  }
+  
+  .splash-logo {
+    display: none;
+  }
+  
+  .card-container {
+    flex: 1 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+    padding: 40px;
+}
+    
+    .splash-bottom-link {
+    width: 100%;
+}
+
+   .splash-download-section {
+    margin: 0 40px;
+    flex-direction: column;
+} 
+
+.splash-pub-date {
+  width: 100%;
+  
+}
+
+.splash-header-content {
+  width: 50%;
+}
+
+.splash-header-content div {
+  margin-bottom: 10px;
+}
+
+.splash-download {
+  margin: 0;
+}
+
+/*
+---------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------- PAGE: EXPLORE INDICATORS -----------------------------------------------
+---------------------------------------------------------------------------------------------------------------------------------------
+*/
+
+
+.funnel-chart-wrapper .plotly .legend {
+  transform: translate(25%,-10px);
+}
+
+.annotation .big {
+  font-size: 30px;
+}
+
+.annotation p {
+    font-size: 12px;
+}
+
+#exploreIndicators-nationalChart {
+  transform: translateX(-30px);
+}
+  
+}
+
+@media (max-height: 550px) {
+  .fixed-scroll-wrapper {
+    overflow-y: scroll;
+  }
+}
+
+@media (max-width: 1655px) {
+  .flex-page {
+    top: 160px;
+  }
+}
+
+@media (max-width: 957px) {
+  .flex-page {
+    top: 168px;
+  }
+}
+
+@media (max-width: 902px) {
+  .flex-page {
+      top: 203px;
+  }
+}
+
+@media (max-width: 902px) {
+  .flex-page {
+      top: 203px;
+  }
+}
+
+@media (max-width: 768px) {
+  .flex-page {
+    top: 0;
+  }
+}
+ 
+
+
+
