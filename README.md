@@ -3,32 +3,34 @@ This build vertical tab bar which can be used to smoothly navigate to the chosen
 
 # How it works
 
-![Scroll to element navigation found in Cancer Care explorer](https://github.com/epi-interactive/Cancer_care-navigation/blob/master/navigation%20cancer%20care.PNG)
+![Scroll to element navigation found in Cancer Care explorer]
 1. Create a vertical tabs input inside a sidebar page. The vertical tabs contain a list of names of all tabs.
  ``` r
-    createFlexSidebarPage(ns("overview"),
-                        div(
-                          class="overview-tabs vertical-tabs",
-                          verticalTabsInput(ns("tabs"),
+       createFlexSidebarPage("overview",
+                           div(
+                             class="overview-tabs vertical-tabs",
+                             verticalTabsInput("tabs",
                                             list(
-                                                "Summary",
-                                                "Bowel cancer" = list(
-                                                    "Background",
-                                                    "Indicators",
-                                                    "Diagnosis",
-                                                    "Characteristics",
-                                                    "Treatment",
-                                                    "More information"
+                                                "New Zealand Map",
+                                                "North island towns" = list(
+                                                    "Wellington",
+                                                    "Auckland",
+                                                    "Tauranga",
+                                                    "Hamilton",
+                                                    "Napier",
+                                                    "Palmerston North",
+                                                    "Gisborne",
+                                                    "Rotorua"
                                                 ),
-                                                "Lung cancer" = list(
-                                                    "Background",
-                                                    "Indicators",
-                                                    "Diagnosis",
-                                                    "Characteristics",
-                                                    "Treatment",
-                                                    "Overall survival",
-                                                    "End-of-life",
-                                                    "Mortality"
+                                                "South island towns" = list(
+                                                    "Christchurch",
+                                                    "Queenstown",
+                                                    "Dunedin",
+                                                    "Invercargill",
+                                                    "Gore",
+                                                    "Ashburton",
+                                                    "Rangiora",
+                                                    "picton"
                                                 )
                                             )
                                             
@@ -36,38 +38,108 @@ This build vertical tab bar which can be used to smoothly navigate to the chosen
                         ),
                         fluidRow(class="content-pad",
                                  column(12,
-                                        uiOutput(ns("page"))
+                                        uiOutput("page")
                                  )
                         ),
                         "Overview",
                         T
   )
  ```
-2. The observe Event reactive function is used to handle the events on the side bar. If the tab is clicked a value based on the name of the tab that was clicked is stored in a variable.
+2.
+``` r
+verticalTabsInput <- function(inputId, tabs, active=NULL) {
+  elems <- as.list(tabs)
+  
+  if(is.null(active)){
+    active <- elems[[1]]
+  }
+
+  items <- list()
+  for(num in 1:length(elems)) {
+    elem <- elems[[num]]
+    
+    if(typeof(elem) == "list") {
+      elemName <- names(elems)[num]
+      
+      subitems <- lapply(elem, function(x) {
+        div(class=paste("vertical-tab", if(x==active){"active"}),
+                    x
+                )
+      })
+      
+      G_cancerGroups <- list(
+        "North island towns" = "North_island_towns",
+        "South island towns" = "South_island_towns",
+        "New Zealand Map"    = "new_zealand_section"
+        # Add more cancer labels here. Make sure the value (bowel_cancer, lung_cancer) matches with a folder in 'data/cancers' #
+      )
+      
+      item_id <- G_cancerGroups[names(G_cancerGroups) == elemName]
+      
+      items[[num]] <- div(class = "vt-dropdown", 
+                          div(id = item_id, class=paste("vertical-tab", if(elemName==active){"active"}),
+                              onclick = paste0("toggleVerticalTabDropdown('", item_id, "', true);"),
+                              elemName
+                          ),
+          div(class = "vt-dropdown-content",
+              style = "display: none;",
+              subitems
+              )
+          )
+    }
+    else {
+      items[[num]] <- div(class=paste("vertical-tab", if(elem==active){"active"}),
+                          onclick = paste0("toggleVerticalTabDropdown('", str_to_lower(elem), "', true);"),
+                          elem
+              )
+    }
+  }
+  div(class="vertical-tab-binding", id=inputId,
+      items
+  )
+}
+```
+3.
+
+``` r
+const toggleVerticalTabDropdown = function(id, isDropdown) {
+    Shiny.setInputValue('activeSection', id);
+    // Hide all other drop-downs and show the clicked drop-down
+    
+    elems = $('.vertical-tab-binding').children('.vt-dropdown');
+    elems.children('.vt-dropdown-content').hide();
+    if(isDropdown) {
+        searchstring = "#" + id + ' + .vt-dropdown-content'
+        elems.find(searchstring).show();
+    }
+    
+    scrollToTop();
+}
+``` 
+
+4. The observe Event reactive function is used to handle the events on the side bar. If the tab is clicked a value based on the name of the tab that was clicked is stored in a variable.
  ``` r
     observeEvent(input$tabs, {
     
     clicked <- NULL
     
     # Set a value based on what was clicked
-    if(input$tabs == "Background"){
-      clicked  <-  "Background"
-    } else if(input$tabs == "Indicators"){
-      clicked <- "Indicators"
-    } else if(input$tabs == "Diagnosis"){
-      clicked <- "Diagnosis"
-    } else if(input$tabs == "Characteristics"){
-      clicked <- "Characteristics"
-    } else if(input$tabs == "Treatment"){
-      clicked <- "Treatment"
-    } else if(input$tabs == "More information"){
-      clicked <- "Information"
-    } else if(input$tabs == "Overall survival"){
-      clicked <- "Survival"
-    } else if(input$tabs == "End-of-life"){
-      clicked <- "EndOfLife"
-    } else if(input$tabs == "Mortality"){
-      clicked <- "Mortality"
+    if(input$tabs == "Wellington" || input$tabs == "Christchurch" ){
+      clicked  <-  "section1"
+    } else if(input$tabs == "Auckland" || input$tabs == "Queenstown" ){
+      clicked <- "section2"
+    } else if(input$tabs == "Tauranga" || input$tabs == "Dunedin"){
+      clicked <- "section3"
+    } else if(input$tabs == "Hamilton" || input$tabs == "Invercargill"){
+      clicked <- "section4"
+    } else if(input$tabs == "Napier"   || input$tabs == "Gore"){
+      clicked <- "section5"
+    } else if(input$tabs == "Palmerston North" || input$tabs == "Ashburton" ){
+      clicked <- "section6"
+    } else if(input$tabs == "Gisborne" || input$tabs == "Rangiora"){
+      clicked <- "section7"
+    } else if(input$tabs == "Rotorua" || input$tabs == "picton"){
+      clicked <- "section8"
     }
     
     if(!is.null(clicked)) {
@@ -75,7 +147,7 @@ This build vertical tab bar which can be used to smoothly navigate to the chosen
     }
   })
  ```
-3. The scroll to Element JavaScript function is also called every time a tab is clicked, and the name of the tab is passed in the parameter.
+5. The scroll to Element JavaScript function is also called every time a tab is clicked, and the name of the tab is passed in the parameter.
  ``` r
  const scrollToElement = function(element) {
   console.log(element);
@@ -93,22 +165,17 @@ This build vertical tab bar which can be used to smoothly navigate to the chosen
   }
 };
 ```
-4. The scroll to Element function verifies if the browser used is Internet Explorer and if it is the case the animate method is used to scroll to the top of the element. Otherwise, the window. Scroll method is used.
+6. The scroll to Element function verifies if the browser used is Internet Explorer and if it is the case the animate method is used to scroll to the top of the element. Otherwise, the window. Scroll method is used.
 ``` r
-# Content for section - Background
+# Content for section - Wellington
   # ------------------------------------------------------------------------------------------------
-  output$background_bc <- renderUI({
-    div(class="overview-section",
-        div(class="overview-section-title",  id="Background", "Background"),
-        div(class="overview-section-content",
-            p("Bowel cancer is the third most common cancer diagnosed in New Zealand."),
-            p("The Bowel Cancer Quality Improvement Report describes and compares the diagnosis, care and outcomes of people diagnosed with bowel cancer."),
-            p("This report summarises some of the key findings from the 2019 report."),
-            p("It is primarily a document for healthcare professionals and service providers but people with bowel cancer and the general public may also find the data interesting. The full report, which contains more information about the methods of data collection and analysis, as well as DHB results, can be accessed at: "
-             ),
-            p(tags$a(style="margin-right: -5px", target="_blank", href="https://www.health.govt.nz", "https://www.health.govt.nz") )
-        )
+  output$section1_tab1 <- renderUI({
+    div(class="overview-section",style="padding-bottom: 400px",
+        div(class="overview-section-title",  id="section1", "Wellington"),
+        m <- leaflet(height=400, width=600) %>%
+          addTiles() %>%  # Add default OpenStreetMap map tiles
+          setView(lng=174.7731, lat=-41.2769,zoom = 12)
     )
   })
 ```
-5. Each section is rendered using render UI reactive function 
+7. Each section is rendered using render UI reactive function 
