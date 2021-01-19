@@ -2,8 +2,6 @@
 This build vertical tab bar which can be used to smoothly navigate to the chosen elements by clicking on the approriate tab. When dealing with long webpages scrolling tabs are more convenient to choose which title to explore from a tab selection rather than scrolling to the title. This can be done using scroll to element function implemented in JavaScript.
 
 # How it works
-
-![Scroll to element navigation found in Cancer Care explorer]
 1. Create a vertical tabs input inside a sidebar page. The vertical tabs contain a list of names of all tabs.
  ``` r
        createFlexSidebarPage("overview",
