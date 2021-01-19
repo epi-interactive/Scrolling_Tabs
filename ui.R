@@ -7,7 +7,6 @@ library(htmltools)
 library(leaflet)
 source("source/util/pageUtil.R") 
 source("source/util/verticalTabsInput.R")
-source("source/util/lightbox.R")
 
 shinyUI(
    tagList(

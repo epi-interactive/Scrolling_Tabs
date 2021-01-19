@@ -42,9 +42,9 @@ shinyServer(function(input, output){
     if(input$activeSection == "new_zealand_section"){
       uiOutput("new_zealand_section")
     }else if(input$activeSection == "South_island_towns") {
-       uiOutput("lung_cancer_section")
+       uiOutput("North_Island_section")
     }else if(input$activeSection == "North_island_towns"){
-       uiOutput("bowel_cancer_section")
+       uiOutput("South_Island_section")
     }
   })
   
@@ -57,7 +57,7 @@ shinyServer(function(input, output){
     )
   })
   
-  output$bowel_cancer_section <- renderUI({
+  output$North_Island_section <- renderUI({
     # Single page layout rather than switch
     tagList(
       div(class="overview-title-section"
@@ -73,7 +73,7 @@ shinyServer(function(input, output){
     )
   })
   
-  output$lung_cancer_section <- renderUI({
+  output$South_Island_section <- renderUI({
     # Single page layout rather than switch
     tagList(
       div(class="overview-title-section"

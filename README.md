@@ -1,5 +1,5 @@
 # Dynamic Scroll to element
-This build vertical tab bar which can be used to smoothly navigate to the chosen elements by clicking on the approriate tab. When dealing with long webpages it is more convenient to choose which title to explore from a tab selection rather than scrolling to the title. This can be done using scroll to element function implemented in JavaScript.
+This build vertical tab bar which can be used to smoothly navigate to the chosen elements by clicking on the approriate tab. When dealing with long webpages scrolling tabs are more convenient to choose which title to explore from a tab selection rather than scrolling to the title. This can be done using scroll to element function implemented in JavaScript.
 
 # How it works
 
@@ -67,14 +67,14 @@ verticalTabsInput <- function(inputId, tabs, active=NULL) {
                 )
       })
       
-      G_cancerGroups <- list(
+      G_NZ_towns <- list(
         "North island towns" = "North_island_towns",
         "South island towns" = "South_island_towns",
         "New Zealand Map"    = "new_zealand_section"
         # Add more cancer labels here. Make sure the value (bowel_cancer, lung_cancer) matches with a folder in 'data/cancers' #
       )
       
-      item_id <- G_cancerGroups[names(G_cancerGroups) == elemName]
+      item_id <- G_NZ_towns[names(G_NZ_towns) == elemName]
       
       items[[num]] <- div(class = "vt-dropdown", 
                           div(id = item_id, class=paste("vertical-tab", if(elemName==active){"active"}),
@@ -99,7 +99,7 @@ verticalTabsInput <- function(inputId, tabs, active=NULL) {
   )
 }
 ```
-3.
+3. This function hides all other drop downs when one tab is selected and shows the selected tab
 
 ``` r
 const toggleVerticalTabDropdown = function(id, isDropdown) {
@@ -124,21 +124,37 @@ const toggleVerticalTabDropdown = function(id, isDropdown) {
     clicked <- NULL
     
     # Set a value based on what was clicked
-    if(input$tabs == "Wellington" || input$tabs == "Christchurch" ){
+    if(input$tabs == "Wellington"){
       clicked  <-  "section1"
-    } else if(input$tabs == "Auckland" || input$tabs == "Queenstown" ){
+    } else if(input$tabs == "Auckland"){
       clicked <- "section2"
-    } else if(input$tabs == "Tauranga" || input$tabs == "Dunedin"){
+    } else if(input$tabs == "Tauranga"){
       clicked <- "section3"
-    } else if(input$tabs == "Hamilton" || input$tabs == "Invercargill"){
+    } else if(input$tabs == "Hamilton"){
       clicked <- "section4"
-    } else if(input$tabs == "Napier"   || input$tabs == "Gore"){
+    } else if(input$tabs == "Napier"){
       clicked <- "section5"
-    } else if(input$tabs == "Palmerston North" || input$tabs == "Ashburton" ){
+    } else if(input$tabs == "Palmerston North"){
       clicked <- "section6"
-    } else if(input$tabs == "Gisborne" || input$tabs == "Rangiora"){
+    } else if(input$tabs == "Gisborne"){
       clicked <- "section7"
-    } else if(input$tabs == "Rotorua" || input$tabs == "picton"){
+    } else if(input$tabs == "Rotorua"){
+      clicked <- "section8"
+    } else if(input$tabs == "Christchurch" ){
+      clicked  <- "section1"
+    } else if(input$tabs == "Queenstown" ){
+      clicked <- "section2"
+    } else if(input$tabs == "Dunedin"){
+      clicked <- "section3"
+    } else if(input$tabs == "Invercargill"){
+      clicked <- "section4"
+    } else if(input$tabs == "Gore"){
+      clicked <- "section5"
+    } else if(input$tabs == "Ashburton" ){
+      clicked <- "section6"
+    } else if(input$tabs == "Rangiora"){
+      clicked <- "section7"
+    } else if(input$tabs == "Picton"){
       clicked <- "section8"
     }
     
