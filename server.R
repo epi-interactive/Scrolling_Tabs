@@ -11,21 +11,37 @@ shinyServer(function(input, output){
     clicked <- NULL
     
     # Set a value based on what was clicked
-    if(input$tabs == "Wellington" || input$tabs == "Christchurch" ){
+    if(input$tabs == "Wellington"){
       clicked  <-  "section1"
-    } else if(input$tabs == "Auckland" || input$tabs == "Queenstown" ){
+    } else if(input$tabs == "Auckland"){
       clicked <- "section2"
-    } else if(input$tabs == "Tauranga" || input$tabs == "Dunedin"){
+    } else if(input$tabs == "Tauranga"){
       clicked <- "section3"
-    } else if(input$tabs == "Hamilton" || input$tabs == "Invercargill"){
+    } else if(input$tabs == "Hamilton"){
       clicked <- "section4"
-    } else if(input$tabs == "Napier"   || input$tabs == "Gore"){
+    } else if(input$tabs == "Napier"){
       clicked <- "section5"
-    } else if(input$tabs == "Palmerston North" || input$tabs == "Ashburton" ){
+    } else if(input$tabs == "Palmerston North"){
       clicked <- "section6"
-    } else if(input$tabs == "Gisborne" || input$tabs == "Rangiora"){
+    } else if(input$tabs == "Gisborne"){
       clicked <- "section7"
-    } else if(input$tabs == "Rotorua" || input$tabs == "picton"){
+    } else if(input$tabs == "Rotorua"){
+      clicked <- "section8"
+    } else if(input$tabs == "Christchurch" ){
+      clicked  <- "section1"
+    } else if(input$tabs == "Queenstown" ){
+      clicked <- "section2"
+    } else if(input$tabs == "Dunedin"){
+      clicked <- "section3"
+    } else if(input$tabs == "Invercargill"){
+      clicked <- "section4"
+    } else if(input$tabs == "Gore"){
+      clicked <- "section5"
+    } else if(input$tabs == "Ashburton" ){
+      clicked <- "section6"
+    } else if(input$tabs == "Rangiora"){
+      clicked <- "section7"
+    } else if(input$tabs == "Picton"){
       clicked <- "section8"
     }
     
@@ -38,13 +54,14 @@ shinyServer(function(input, output){
   # The page. Sections are generated individually and rendered together with this output
   # ------------------------------------------------------------------------------------------------
   output$page <- renderUI({
+    req(input$activeSection)
     
-    if(input$activeSection == "new_zealand_section"){
+    if(input$activeSection == "new_zealand_section" || input$activeSection == "new zealand map"){
       uiOutput("new_zealand_section")
     }else if(input$activeSection == "South_island_towns") {
-       uiOutput("North_Island_section")
-    }else if(input$activeSection == "North_island_towns"){
        uiOutput("South_Island_section")
+    }else if(input$activeSection == "North_island_towns"){
+       uiOutput("North_Island_section")
     }
   })
   
@@ -54,22 +71,6 @@ shinyServer(function(input, output){
         m <- leaflet(height=400, width=600) %>%
           addTiles() %>%  # Add default OpenStreetMap map tiles
           setView(lng=174.8860, lat=-40.9006,zoom = 5)
-    )
-  })
-  
-  output$North_Island_section <- renderUI({
-    # Single page layout rather than switch
-    tagList(
-      div(class="overview-title-section"
-      ),
-      uiOutput("section1_tab1"),
-      uiOutput("section2_tab1"),
-      uiOutput("section3_tab1"),
-      uiOutput("section4_tab1"),
-      uiOutput("section5_tab1"),
-      uiOutput("section6_tab1"),
-      uiOutput("section7_tab1"),
-      uiOutput("section8_tab1")
     )
   })
   
@@ -88,12 +89,29 @@ shinyServer(function(input, output){
       uiOutput("section8_tab2")
     )
   })
+  
+  output$North_Island_section <- renderUI({
+    # Single page layout rather than switch
+    tagList(
+      div(class="overview-title-section"
+      ),
+      uiOutput("section1_tab1"),
+      uiOutput("section2_tab1"),
+      uiOutput("section3_tab1"),
+      uiOutput("section4_tab1"),
+      uiOutput("section5_tab1"),
+      uiOutput("section6_tab1"),
+      uiOutput("section7_tab1"),
+      uiOutput("section8_tab1")
+    )
+  })
 
+  # North Island ----------------------------------------------------
   
   # Content for section - Wellington
   # ------------------------------------------------------------------------------------------------
   output$section1_tab1 <- renderUI({
-    div(class="overview-section",style="padding-bottom: 400px",
+    div(class="overview-section",style="padding-bottom: 100px",
         div(class="overview-section-title",  id="section1", "Wellington"),
         m <- leaflet(height=400, width=600) %>%
           addTiles() %>%  # Add default OpenStreetMap map tiles
@@ -104,7 +122,7 @@ shinyServer(function(input, output){
   # Content for section - Auckland
   # ------------------------------------------------------------------------------------------------
   output$section2_tab1 <- renderUI({
-    div(class="overview-section wide",style="padding-bottom: 400px",
+    div(class="overview-section",style="padding-bottom: 100px",
         div(class="overview-section-title no-line", id="section2", "Auckland"),
         m <- leaflet(height=400, width=600) %>%
           addTiles() %>%  # Add default OpenStreetMap map tiles
@@ -115,7 +133,7 @@ shinyServer(function(input, output){
   # Content for section - Tauranga
   # ------------------------------------------------------------------------------------------------
   output$section3_tab1 <- renderUI({
-    div(class="overview-section",style="padding-bottom: 400px",
+    div(class="overview-section",style="padding-bottom: 100px",
         div(class="overview-section-title",id="section3", "Tauranga"),
         m <- leaflet(height=400, width=600) %>%
           addTiles() %>%  # Add default OpenStreetMap map tiles
@@ -126,7 +144,7 @@ shinyServer(function(input, output){
   # Content for section - Hamilton
   # ------------------------------------------------------------------------------------------------
   output$section4_tab1 <- renderUI({
-    div(class="overview-section",style="padding-bottom: 400px;",
+    div(class="overview-section",style="padding-bottom: 100px;",
         div(class="overview-section-title",id = "section4", "Hamilton"),
         m <- leaflet(height=400, width=600) %>%
           addTiles() %>%  # Add default OpenStreetMap map tiles
@@ -137,7 +155,7 @@ shinyServer(function(input, output){
   # Content for section - Napier
   # ------------------------------------------------------------------------------------------------
   output$section5_tab1 <- renderUI({
-    div(class="overview-section",style="padding-bottom: 400px;",
+    div(class="overview-section",style="padding-bottom: 100px;",
         div(class="overview-section-title",id="section5", "Napier"),
         m <- leaflet(height=400, width=600) %>%
           addTiles() %>%  # Add default OpenStreetMap map tiles
@@ -148,7 +166,7 @@ shinyServer(function(input, output){
   # Content for section - Palmerston North
   # ------------------------------------------------------------------------------------------------
   output$section6_tab1 <- renderUI({
-    div(class="overview-section",style="padding-bottom: 400px;",
+    div(class="overview-section",style="padding-bottom: 100px;",
         div(class="overview-section-title",id="section6", "Palmerston North"),
         m <- leaflet(height=400, width=600) %>%
           addTiles() %>%  # Add default OpenStreetMap map tiles
@@ -159,7 +177,7 @@ shinyServer(function(input, output){
   # Content for section - Gisborne
   # ------------------------------------------------------------------------------------------------
   output$section7_tab1 <- renderUI({
-    div(class="overview-section",style="padding-bottom: 400px;",
+    div(class="overview-section",style="padding-bottom: 100px;",
         div(class="overview-section-title", id="section7", "Gisborne"),
         m <- leaflet(height=400, width=600) %>%
           addTiles() %>%  # Add default OpenStreetMap map tiles
@@ -170,7 +188,7 @@ shinyServer(function(input, output){
   # Content for section - Rotorua
   # ------------------------------------------------------------------------------------------------
   output$section8_tab1 <- renderUI({
-    div(class="overview-section", style="padding-bottom: 400px;",
+    div(class="overview-section", style="padding-bottom: 100px;",
         div(class="overview-section-title", id="section8", "Rotorua"),
         m <- leaflet(height=400, width=600) %>%
           addTiles() %>%  # Add default OpenStreetMap map tiles
@@ -179,12 +197,12 @@ shinyServer(function(input, output){
   })
   
 
-# Lung cancer overview ----------------------------------------------------
+# South Island ----------------------------------------------------
 
-# Content for section - Background
+# Content for section - Christchurch
 # ------------------------------------------------------------------------------------------------
 output$section1_tab2 <- renderUI({
-  div(class="overview-section",style="padding-bottom: 400px;",
+  div(class="overview-section",style="padding-bottom: 100px;",
       div(class="overview-section-title",id="section1", "Christchurch"),
       m <- leaflet(height=400, width=600) %>%
         addTiles() %>%  # Add default OpenStreetMap map tiles
@@ -193,9 +211,10 @@ output$section1_tab2 <- renderUI({
   )
 })
   
-  
+# Content for section - Queenstown
+# ------------------------------------------------------------------------------------------------  
 output$section2_tab2 <- renderUI({
-  div(class="overview-section wide",style="padding-bottom: 400px;",
+  div(class="overview-section",style="padding-bottom: 100px;",
       div(class="overview-section-title no-line", id="section2", "Queenstown"),
       m <- leaflet(height=400, width=600) %>%
         addTiles() %>%  # Add default OpenStreetMap map tiles
@@ -203,10 +222,10 @@ output$section2_tab2 <- renderUI({
   )
 })  
 
-# Content for section - Diagnosis
+# Content for section - Dunedin
 # ------------------------------------------------------------------------------------------------
 output$section3_tab2 <- renderUI({
-  div(class="overview-section",style="padding-bottom: 400px;",
+  div(class="overview-section",style="padding-bottom: 100px;",
       div(class="overview-section-title",id="section3", "Dunedin"),
       m <- leaflet(height=400, width=600) %>%
         addTiles() %>%  # Add default OpenStreetMap map tiles
@@ -214,10 +233,10 @@ output$section3_tab2 <- renderUI({
   )
 })
 
-# Content for section - Characteristics (which is actually part of diagnosis)
+# Content for section - Invercargill
 # ------------------------------------------------------------------------------------------------
 output$section4_tab2 <- renderUI({
-  div(class="overview-section",style="padding-bottom: 400px;",
+  div(class="overview-section",style="padding-bottom: 100px;",
       div(class="overview-section-title", id = "section4", "Invercargill"),
       m <- leaflet(height=400, width=600) %>%
         addTiles() %>%  # Add default OpenStreetMap map tiles
@@ -225,10 +244,10 @@ output$section4_tab2 <- renderUI({
   )
 })
 
-# Content for section - Treatment
+# Content for section - Gore
 # ------------------------------------------------------------------------------------------------
 output$section5_tab2 <- renderUI({
-  div(class="overview-section",style="padding-bottom: 400px;",
+  div(class="overview-section",style="padding-bottom: 100px;",
       div(class="overview-section-title",id = "section5", "Gore"),
       m <- leaflet(height=400, width=600) %>%
         addTiles() %>%  # Add default OpenStreetMap map tiles
@@ -236,10 +255,10 @@ output$section5_tab2 <- renderUI({
   )
 })
 
-# Content for section - Survival (which is actually part of diagnosis)
+# Content for section - Ashburton
 # ------------------------------------------------------------------------------------------------
 output$section6_tab2 <- renderUI({
-  div(class="overview-section",style="padding-bottom: 400px;",
+  div(class="overview-section",style="padding-bottom: 100px;",
       div(class="overview-section-title", id = "section6", "Ashburton"),
       m <- leaflet(height=400, width=600) %>%
         addTiles() %>%  # Add default OpenStreetMap map tiles
@@ -247,8 +266,10 @@ output$section6_tab2 <- renderUI({
   )
 })
 
+# Content for section - Rangiora
+# ------------------------------------------------------------------------------------------------  
 output$section7_tab2 <- renderUI({
-  div(class="overview-section",style="padding-bottom: 400px;",
+  div(class="overview-section",style="padding-bottom: 100px;",
       div(class="overview-section-title", id = "section7", "Rangiora"),
       m <- leaflet(height=400, width=600) %>%
         addTiles() %>%  # Add default OpenStreetMap map tiles
@@ -256,8 +277,10 @@ output$section7_tab2 <- renderUI({
   )
 })
 
+# Content for section - Picton
+# ------------------------------------------------------------------------------------------------  
 output$section8_tab2 <- renderUI({
-  div(class="overview-section",style="padding-bottom: 400px;",
+  div(class="overview-section",style="padding-bottom: 100px;",
       div(class="overview-section-title", id = "section8", "Picton"),
       m <- leaflet(height=400, width=600) %>%
         addTiles() %>%  # Add default OpenStreetMap map tiles

@@ -5,7 +5,6 @@ library(dplyr)
 library(readxl)
 library(htmltools)
 library(leaflet)
-source("source/util/pageUtil.R") 
 source("source/util/verticalTabsInput.R")
 
 shinyUI(
@@ -46,7 +45,7 @@ shinyUI(
                                                     "Gore",
                                                     "Ashburton",
                                                     "Rangiora",
-                                                    "picton"
+                                                    "Picton"
                                                 )
                                             )
                                             
