@@ -123,7 +123,7 @@ shinyServer(function(input, output){
   # ------------------------------------------------------------------------------------------------
   output$section2_tab1 <- renderUI({
     div(class="overview-section",style="padding-bottom: 100px",
-        div(class="overview-section-title no-line", id="section2", "Auckland"),
+        div(class="overview-section-title", id="section2", "Auckland"),
         m <- leaflet(height=400, width=600) %>%
           addTiles() %>%  # Add default OpenStreetMap map tiles
           setView(lng=174.7625, lat=-36.8483,zoom = 12)
@@ -215,7 +215,7 @@ output$section1_tab2 <- renderUI({
 # ------------------------------------------------------------------------------------------------  
 output$section2_tab2 <- renderUI({
   div(class="overview-section",style="padding-bottom: 100px;",
-      div(class="overview-section-title no-line", id="section2", "Queenstown"),
+      div(class="overview-section-title", id="section2", "Queenstown"),
       m <- leaflet(height=400, width=600) %>%
         addTiles() %>%  # Add default OpenStreetMap map tiles
         setView(lng=168.6616, lat=-45.0302, zoom = 12)
