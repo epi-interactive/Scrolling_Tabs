@@ -24,7 +24,6 @@ verticalTabsInput <- function(inputId, tabs, active=NULL) {
         "North island towns" = "North_island_towns",
         "South island towns" = "South_island_towns",
         "New Zealand Map"    = "new_zealand_section"
-        # Add more cancer labels here. Make sure the value (bowel_cancer, lung_cancer) matches with a folder in 'data/cancers' #
       )
       
       item_id <- G_NZ_towns[names(G_NZ_towns) == elemName]
