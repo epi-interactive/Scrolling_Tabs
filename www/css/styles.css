@@ -184,12 +184,6 @@ ul.nav.nav-pills {
     border-radius: 0;
 }
 
-.navbar-moh {
-    #background: #caab8e url(/img/nav_decoration.svg) no-repeat bottom right;
-    background-size: 50%;
-    width: 100%;
-    
-}
 
 .navbar-moh .navbar-nav>.active>a, .navbar-moh .navbar-nav>.active>a:hover, .navbar-moh .navbar-nav>.active>a:focus {
     font-weight: bold;
@@ -350,17 +344,6 @@ h4 {
     margin-bottom: 20px;
 }
 
-.chart-title {
-    font-size: 20px;
-    font-weight: bold;
-    margin-bottom: 10px;
-}
-
-.table-title {
-    font-size: 22px;
-    font-weight: bold;
-}
-
 .header-title {
     display: inline-block;
     font-family: 'Montserrat', sans-serif;
@@ -381,14 +364,6 @@ h4 {
     font-weight: bold;
 }
 
-.indicator-info-app-title {
-    color: #585454;
-    font-size: 18px;
-    font-weight: bold;
-    text-decoration: underline;
-    text-underline-position: under;
-}
-
 .static-title {
     color: #585454;
     font-size: 27px;
@@ -402,63 +377,6 @@ h4 {
     font-weight: bold;
     border-bottom: solid 1px #585454;
     margin-bottom: 15px;
-}
-
-/*
----------------------------------------------------------------------------------------------------------------------------------------
-------------------------------------------------------------- SPLASH HEADER -----------------------------------------------------------
----------------------------------------------------------------------------------------------------------------------------------------
-*/
-.splash-header {
-    background-size: cover;
-    /*min-height: 400px;*/
-    overflow: auto;
-    position: relative;
-    color: white;
-}
-
-.splash-top {
-      overflow: auto;
-    margin: 0;
-}
-
-.splash-logo {
-    width: 15%;
-    min-width: 150px;
-}
-
-.splash-header h1 {
-    font-size: 62px;
-    color: #fff7ed;
-}
-
-.splash-header h2 {
-    font-size: 24px;
-}
-
-.align-image-left {
-    margin-left: -3.5%;
-}
-
-.splash-pub-date {
-    display: inline-block;
-    border-top: solid 5px #0ab58f;
-    font-size: 32px;
-    font-weight: bold;
-    padding: 10px 0;
-    margin: 10px 0;
-    color: #585454;
-}
-
-.splash-header-subtitles {
-  color: #585454;
-}
-
-.nz-govt-logo {
-    position: relative;
-    width: 200px;
-    margin: 30px 0;
-    float: right;
 }
 
 
@@ -511,12 +429,6 @@ h4 {
 
 /* 
 ========================================================================================================================================
-======================================================= INDICATOR OVERVIEW STYLES END ==================================================
-========================================================================================================================================
-*/
-
-/* 
-========================================================================================================================================
 ========================================================= METHODOLOGY STYLES START =====================================================
 ========================================================================================================================================
 */
@@ -536,13 +448,6 @@ h4 {
 }
 
 
-
-/* 
-========================================================================================================================================
-======================================================== DOWNLOAD DATASETS STYLES END ==================================================
-========================================================================================================================================
-*/
-
 /* 
 ========================================================================================================================================
 ========================================================= OVERVIEW PAGE STYLES START ===================================================
@@ -555,11 +460,6 @@ h4 {
     width: 20%;
 }
 
-/*#overview-overview .flex-sidebar,
-#downloadDataSets-downloadDataSets .flex-sidebar,
-#methodology-methodology .flex-sidebar {
-      min-height: calc(100vh - 105px);
-}*/
 
 .overview-title-section {
   margin-bottom: 40px;
