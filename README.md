@@ -1,5 +1,12 @@
 # Dynamic Scroll to element
-This build vertical tab bar which can be used to smoothly navigate to the chosen elements by clicking on the approriate tab. When dealing with long webpages scrolling tabs are more convenient to choose which title to explore from a tab selection rather than scrolling to the title. This can be done using scroll to element function implemented in JavaScript.
+This build vertical tab bar which can be used to smoothly navigate to the chosen elements by clicking on the approriate tab. When dealing with long webpages scrolling tabs are more convenient to use. The user chooses which title to explore from a tab selection rather than scrolling to the title. This can be done using scroll to element function implemented in JavaScript.
+
+
+You can try out the app [here](https://shiny.epi-interactive.com/modal)
+
+
+<kbd>![alt text](Scrolling_tab.PNG)</kbd>
+
 
 # How it works
 1. Create a vertical tabs input inside a sidebar page. The vertical tabs contain a list of names of all tabs.
@@ -43,7 +50,7 @@ This build vertical tab bar which can be used to smoothly navigate to the chosen
                         T
   )
  ```
-2.
+2. This function handles which tab is active and the click event. Also differentiates what kind of tab is selected.
 ``` r
 verticalTabsInput <- function(inputId, tabs, active=NULL) {
   elems <- as.list(tabs)
@@ -69,7 +76,6 @@ verticalTabsInput <- function(inputId, tabs, active=NULL) {
         "North island towns" = "North_island_towns",
         "South island towns" = "South_island_towns",
         "New Zealand Map"    = "new_zealand_section"
-        # Add more cancer labels here. Make sure the value (bowel_cancer, lung_cancer) matches with a folder in 'data/cancers' #
       )
       
       item_id <- G_NZ_towns[names(G_NZ_towns) == elemName]
@@ -161,7 +167,8 @@ const toggleVerticalTabDropdown = function(id, isDropdown) {
     }
   })
  ```
-5. The scroll to Element JavaScript function is also called every time a tab is clicked, and the name of the tab is passed in the parameter.
+5. The scroll to Element JavaScript function is also called every time a tab is clicked, and the name of the tab is passed as a  parameter.
+
  ``` r
  const scrollToElement = function(element) {
   console.log(element);
