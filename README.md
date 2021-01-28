@@ -11,9 +11,6 @@ You can try out the app [here](https://shiny.epi-interactive.com/modal)
 # How it works
 1. Create a vertical tabs input inside a sidebar page. The vertical tabs contain a list of names of all tabs.
  ``` r
-       createFlexSidebarPage("overview",
-                           div(
-                             class="overview-tabs vertical-tabs",
                              verticalTabsInput("tabs",
                                             list(
                                                 "New Zealand Map",
@@ -40,15 +37,6 @@ You can try out the app [here](https://shiny.epi-interactive.com/modal)
                                             )
                                             
                           )
-                        ),
-                        fluidRow(class="content-pad",
-                                 column(12,
-                                        uiOutput("page")
-                                 )
-                        ),
-                        "Overview",
-                        T
-  )
  ```
 2. This function handles which tab is active and the click event. Also differentiates what kind of tab is selected.
 ``` r
@@ -138,40 +126,18 @@ const toggleVerticalTabDropdown = function(id, isDropdown) {
       clicked <- "section4"
     } else if(input$tabs == "Napier"){
       clicked <- "section5"
-    } else if(input$tabs == "Palmerston North"){
-      clicked <- "section6"
-    } else if(input$tabs == "Gisborne"){
-      clicked <- "section7"
-    } else if(input$tabs == "Rotorua"){
-      clicked <- "section8"
-    } else if(input$tabs == "Christchurch" ){
-      clicked  <- "section1"
-    } else if(input$tabs == "Queenstown" ){
-      clicked <- "section2"
-    } else if(input$tabs == "Dunedin"){
-      clicked <- "section3"
-    } else if(input$tabs == "Invercargill"){
-      clicked <- "section4"
-    } else if(input$tabs == "Gore"){
-      clicked <- "section5"
-    } else if(input$tabs == "Ashburton" ){
-      clicked <- "section6"
-    } else if(input$tabs == "Rangiora"){
-      clicked <- "section7"
-    } else if(input$tabs == "Picton"){
-      clicked <- "section8"
-    }
-    
-    if(!is.null(clicked)) {
-      shinyjs::runjs(paste0("scrollToElement(", clicked, ")"))
-    }
-  })
+    .
+    .
+    .
+    .
+    .
+    .
+    .
  ```
 5. The scroll to Element JavaScript function is also called every time a tab is clicked, and the name of the tab is passed as a  parameter.
 
  ``` r
  const scrollToElement = function(element) {
-  console.log(element);
   if(navigator.sayswho.indexOf("IE") > -1) {
     $("html, body").animate({
         scrollTop: element.offsetTop
@@ -185,18 +151,5 @@ const toggleVerticalTabDropdown = function(id, isDropdown) {
     });
   }
 };
-```
-6. The scroll to Element function verifies if the browser used is Internet Explorer and if it is the case the animate method is used to scroll to the top of the element. Otherwise, the window. Scroll method is used.
-``` r
-# Content for section - Wellington
-  # ------------------------------------------------------------------------------------------------
-  output$section1_tab1 <- renderUI({
-    div(class="overview-section",style="padding-bottom: 400px",
-        div(class="overview-section-title",  id="section1", "Wellington"),
-        m <- leaflet(height=400, width=600) %>%
-          addTiles() %>%  # Add default OpenStreetMap map tiles
-          setView(lng=174.7731, lat=-41.2769,zoom = 12)
-    )
-  })
 ```
 7. Each section is rendered using render UI reactive function 
