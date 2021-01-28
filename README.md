@@ -9,7 +9,7 @@ You can try out the app [here](https://shiny.epi-interactive.com/modal)
 
 
 # How it works
-1. Create a vertical tabs input inside a sidebar page. The vertical tabs contain a list of names of all tabs.
+1. A vertical tabs input is created which contains a list of names of all tabs.
  ``` r
  verticalTabsInput("tabs",
           list(
@@ -38,7 +38,7 @@ You can try out the app [here](https://shiny.epi-interactive.com/modal)
                                             
              )
  ```
-2. This function handles which tab is active and the click event. Also differentiates what kind of tab is selected.
+2. This function handles which tab is active and the click event. Also handles the differences between the type of tab selected. For instance if a drop down or selection tab was selected.
 ``` r
 verticalTabsInput <- function(inputId, tabs, active=NULL) {
   elems <- as.list(tabs)
