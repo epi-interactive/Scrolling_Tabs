@@ -9,36 +9,36 @@ You can try out the app [here](https://shiny.epi-interactive.com/modal)
 
 
 # How it works
-1. Create a vertical tabs input inside a sidebar page. The vertical tabs contain a list of names of all tabs.
+1. A vertical tabs input is created which contains a list of names of all tabs.
  ``` r
-                             verticalTabsInput("tabs",
-                                            list(
-                                                "New Zealand Map",
-                                                "North island towns" = list(
-                                                    "Wellington",
-                                                    "Auckland",
-                                                    "Tauranga",
-                                                    "Hamilton",
-                                                    "Napier",
-                                                    "Palmerston North",
-                                                    "Gisborne",
-                                                    "Rotorua"
-                                                ),
-                                                "South island towns" = list(
-                                                    "Christchurch",
-                                                    "Queenstown",
-                                                    "Dunedin",
-                                                    "Invercargill",
-                                                    "Gore",
-                                                    "Ashburton",
-                                                    "Rangiora",
-                                                    "picton"
-                                                )
-                                            )
+ verticalTabsInput("tabs",
+          list(
+             "New Zealand Map",
+             "North island towns" = list(
+                 "Wellington",
+                 "Auckland",
+                 "Tauranga",
+                 "Hamilton",
+                 "Napier",
+                 "Palmerston North",
+                 "Gisborne",
+                 "Rotorua"
+             ),
+             "South island towns" = list(
+                 "Christchurch",
+                 "Queenstown",
+                 "Dunedin",
+                 "Invercargill",
+                 "Gore",
+                 "Ashburton",
+                 "Rangiora",
+                 "picton"
+                 )
+                )
                                             
-                          )
+             )
  ```
-2. This function handles which tab is active and the click event. Also differentiates what kind of tab is selected.
+2. This function handles which tab is active and the click event. Also handles the differences between the type of tab selected. For instance if a drop down or selection tab was selected.
 ``` r
 verticalTabsInput <- function(inputId, tabs, active=NULL) {
   elems <- as.list(tabs)
@@ -115,16 +115,16 @@ const toggleVerticalTabDropdown = function(id, isDropdown) {
     
     clicked <- NULL
     
-    # Set a value based on what was clicked
-    if(input$tabs == "Wellington"){
+     # Set a value based on what was clicked
+    if(input$tabs == "Wellington" || input$tabs == "Christchurch"){
       clicked  <-  "section1"
-    } else if(input$tabs == "Auckland"){
+    } else if(input$tabs == "Auckland" || input$tabs == "Queenstown"){
       clicked <- "section2"
-    } else if(input$tabs == "Tauranga"){
+    } else if(input$tabs == "Tauranga" || input$tabs == "Dunedin"){
       clicked <- "section3"
-    } else if(input$tabs == "Hamilton"){
+    } else if(input$tabs == "Hamilton" || input$tabs == "Invercargill"){
       clicked <- "section4"
-    } else if(input$tabs == "Napier"){
+    } else if(input$tabs == "Napier" || input$tabs == "Gore"){
       clicked <- "section5"
     .
     .
