@@ -8,7 +8,7 @@ html, body{
   font-family: 'Fira Sans', sans-serif;
   height: 100%;
   scroll-behavior: smooth;
-  background-color: #fbeec5;
+  background-color: #FFFFFF;
   color: #585454;
 }
 
@@ -214,7 +214,7 @@ ul.nav.nav-pills {
 */
 
 .flex-sidebar {
-    background-color: #f9c55a;
+    background-color: #01515E;
     flex-direction: column;
     display: flex;
     width: 20%;
@@ -436,13 +436,13 @@ h4 {
 .vertical-tab {
     width: 100%;
     padding: 10px 15px;
-    border-bottom: 1px solid #585454;
-    color: #585454;
+    border-bottom: 1px solid #ffffff;
+    color: #ffffff;
     cursor: pointer;
 }
 
 .vertical-tab.active {
-    background: #fff;
+    background: #5a5a5a;
     font-weight: bold;
     border-bottom: none;
 }
@@ -512,7 +512,15 @@ h4 {
 }
 
 
-
+.tab-logo{
+  position:inherit;
+  width:300px;
+}
+.imgDiv{
+  position:absolute;
+  z-index:5;
+  bottom:-500px;
+}
 
   
 

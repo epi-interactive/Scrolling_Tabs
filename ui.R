@@ -50,8 +50,9 @@ shinyUI(
                                                 )
                                             )
                                             
-                          )
+                          ),div(class="imgDiv", img(class="tab-logo",src= "img/Epi_Logo_HZ_Solid_REV.png")),
                         ),
+                        
                         fluidRow(class="content-pad",
                                  column(12,
                                         uiOutput("page")
