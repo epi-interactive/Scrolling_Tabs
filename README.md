@@ -11,32 +11,32 @@ You can try out the app [here](https://shiny.epi-interactive.com/modal)
 # How it works
 1. Create a vertical tabs input inside a sidebar page. The vertical tabs contain a list of names of all tabs.
  ``` r
-                             verticalTabsInput("tabs",
-                                            list(
-                                                "New Zealand Map",
-                                                "North island towns" = list(
-                                                    "Wellington",
-                                                    "Auckland",
-                                                    "Tauranga",
-                                                    "Hamilton",
-                                                    "Napier",
-                                                    "Palmerston North",
-                                                    "Gisborne",
-                                                    "Rotorua"
-                                                ),
-                                                "South island towns" = list(
-                                                    "Christchurch",
-                                                    "Queenstown",
-                                                    "Dunedin",
-                                                    "Invercargill",
-                                                    "Gore",
-                                                    "Ashburton",
-                                                    "Rangiora",
-                                                    "picton"
-                                                )
-                                            )
+ verticalTabsInput("tabs",
+          list(
+             "New Zealand Map",
+             "North island towns" = list(
+                 "Wellington",
+                 "Auckland",
+                 "Tauranga",
+                 "Hamilton",
+                 "Napier",
+                 "Palmerston North",
+                 "Gisborne",
+                 "Rotorua"
+             ),
+             "South island towns" = list(
+                 "Christchurch",
+                 "Queenstown",
+                 "Dunedin",
+                 "Invercargill",
+                 "Gore",
+                 "Ashburton",
+                 "Rangiora",
+                 "picton"
+                 )
+                )
                                             
-                          )
+             )
  ```
 2. This function handles which tab is active and the click event. Also differentiates what kind of tab is selected.
 ``` r
