@@ -115,16 +115,16 @@ const toggleVerticalTabDropdown = function(id, isDropdown) {
     
     clicked <- NULL
     
-    # Set a value based on what was clicked
-    if(input$tabs == "Wellington"){
+     # Set a value based on what was clicked
+    if(input$tabs == "Wellington" || input$tabs == "Christchurch"){
       clicked  <-  "section1"
-    } else if(input$tabs == "Auckland"){
+    } else if(input$tabs == "Auckland" || input$tabs == "Queenstown"){
       clicked <- "section2"
-    } else if(input$tabs == "Tauranga"){
+    } else if(input$tabs == "Tauranga" || input$tabs == "Dunedin"){
       clicked <- "section3"
-    } else if(input$tabs == "Hamilton"){
+    } else if(input$tabs == "Hamilton" || input$tabs == "Invercargill"){
       clicked <- "section4"
-    } else if(input$tabs == "Napier"){
+    } else if(input$tabs == "Napier" || input$tabs == "Gore"){
       clicked <- "section5"
     .
     .
