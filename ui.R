@@ -11,16 +11,11 @@ source("source/util/pageUtil.R")
 shinyUI(
    tagList(
    useShinyjs(),
-   bootstrapPage(NULL, theme = "css/bootstrap.min.css"),
+   bootstrapPage(NULL),
    tags$head(    
    tags$script(src="js/util.js"),
-   tags$script(src="js/smoothScrollJquery.js"),
    tags$script(src="js/verticalTabs.js"),
-   tags$link(rel = "stylesheet", type = "text/css", href = "css/font-awesome.min.css"),
    tags$link(rel = "stylesheet", type = "text/css", href = "css/styles.css"),
-   tags$link(rel = "stylesheet", type = "text/css", href = "css/cc_custom.css"),
-   tags$link(rel = "stylesheet", type = "text/css", href = "css/indicator-custom.css"),
-   tags$link(rel = "stylesheet", type = "text/css", href = "css/nprogress.css")
    ),
    createFlexSidebarPage("overview",
                            div(
