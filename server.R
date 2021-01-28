@@ -11,39 +11,23 @@ shinyServer(function(input, output){
     clicked <- NULL
     
     # Set a value based on what was clicked
-    if(input$tabs == "Wellington"){
+    if(input$tabs == "Wellington" || input$tabs == "Christchurch"){
       clicked  <-  "section1"
-    } else if(input$tabs == "Auckland"){
+    } else if(input$tabs == "Auckland" || input$tabs == "Queenstown"){
       clicked <- "section2"
-    } else if(input$tabs == "Tauranga"){
+    } else if(input$tabs == "Tauranga" || input$tabs == "Dunedin"){
       clicked <- "section3"
-    } else if(input$tabs == "Hamilton"){
+    } else if(input$tabs == "Hamilton" || input$tabs == "Invercargill"){
       clicked <- "section4"
-    } else if(input$tabs == "Napier"){
+    } else if(input$tabs == "Napier" || input$tabs == "Gore"){
       clicked <- "section5"
-    } else if(input$tabs == "Palmerston North"){
+    } else if(input$tabs == "Palmerston North" || input$tabs == "Ashburton"){
       clicked <- "section6"
-    } else if(input$tabs == "Gisborne"){
+    } else if(input$tabs == "Gisborne" || input$tabs == "Rangiora" ){
       clicked <- "section7"
-    } else if(input$tabs == "Rotorua"){
+    } else if(input$tabs == "Rotorua" || input$tabs == "Picton"){
       clicked <- "section8"
-    } else if(input$tabs == "Christchurch" ){
-      clicked  <- "section1"
-    } else if(input$tabs == "Queenstown" ){
-      clicked <- "section2"
-    } else if(input$tabs == "Dunedin"){
-      clicked <- "section3"
-    } else if(input$tabs == "Invercargill"){
-      clicked <- "section4"
-    } else if(input$tabs == "Gore"){
-      clicked <- "section5"
-    } else if(input$tabs == "Ashburton" ){
-      clicked <- "section6"
-    } else if(input$tabs == "Rangiora"){
-      clicked <- "section7"
-    } else if(input$tabs == "Picton"){
-      clicked <- "section8"
-    }
+    } 
     
     if(!is.null(clicked)) {
       shinyjs::runjs(paste0("scrollToElement(", clicked, ")"))
