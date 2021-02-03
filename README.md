@@ -1,5 +1,5 @@
 # Scrolling tabs
-This builds vertical tab bar which can be used to smoothly navigate to the chosen elements by clicking on the appropriate tab. When dealing with long webpages scrolling tabs are more convenient to use. The user chooses which title to explore from a tab selection rather than scrolling to the title. This can be done using "scroll-to-element" function implemented in JavaScript.
+This builds a vertical tab bar which can be used to smoothly navigate to the chosen elements by clicking on the appropriate tab. When dealing with long web pages, scrolling tabs are more convenient to use. The user chooses which title to explore from a tab selection rather than scrolling to the title. This can be done using "scroll-to-element" function implemented in JavaScript.
 
 
 You can try out the app [here]( https://rshiny.epi-interactive.com/apps/scrolling-tabs)
@@ -9,7 +9,7 @@ You can try out the app [here]( https://rshiny.epi-interactive.com/apps/scrollin
 
 
 # How it works
-1. A vertical tabs input is created which contains a list of names of all tabs.
+1. A vertical tab input is created which contains a list of names of all tabs.
  ``` r
  verticalTabsInput("tabs",
           list(
@@ -38,7 +38,7 @@ You can try out the app [here]( https://rshiny.epi-interactive.com/apps/scrollin
                                             
              )
  ```
-2. This function handles which tab is active and the click event. Also handles the differences between the type of tab selected. For instance if a drop down or selection tab was selected.
+2. This function handles which tab is active and the click event. It also handles the differences between the type of tab selected. For instance it checks if the tab selected was a drop-down or selection tab.
 ``` r
 verticalTabsInput <- function(inputId, tabs, active=NULL) {
   elems <- as.list(tabs)
@@ -91,7 +91,7 @@ verticalTabsInput <- function(inputId, tabs, active=NULL) {
   )
 }
 ```
-3. This function hides all other drop downs when one tab is selected and shows the selected tab
+3. This function hides all other drop-downs when one tab is selected and shows the selected tab
 
 ``` r
 const toggleVerticalTabDropdown = function(id, isDropdown) {
