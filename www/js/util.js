@@ -39,17 +39,14 @@ const scrollToTop = function() {
 
 const toggleVerticalTabDropdown = function(id, isDropdown) {
     Shiny.setInputValue('activeSection', id);
-    // Hide all other drop-downs and show the clicked drop-down
-    
+
     elems = $('.vertical-tab-binding').children('.vt-dropdown');
     elems.children('.vt-dropdown-content').hide();
     if(isDropdown) {
         searchstring = "#" + id + ' + .vt-dropdown-content'
         elems.find(searchstring).show();
     }
-    
     scrollToTop();
 }
-
 
 

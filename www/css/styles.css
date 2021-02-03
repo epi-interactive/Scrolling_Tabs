@@ -447,7 +447,6 @@ h4 {
     border-bottom: none;
 }
 
-
 /* 
 ========================================================================================================================================
 ========================================================= OVERVIEW PAGE STYLES START ===================================================
@@ -522,9 +521,19 @@ h4 {
   bottom:-500px;
 }
 
-  
+#new_zealand_section{
+  padding-top: 25px;
+}
 
+.vt-dropdown-content{
+  padding-left: 30px;
+  font-weight: normal;
+}
 
+#tabs:first-child{
+  font-weight: bold;
+}
 
-
-
+.overview-section-title{
+  margin-bottom: 20px;
+}

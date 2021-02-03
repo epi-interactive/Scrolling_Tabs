@@ -27,13 +27,13 @@ shinyServer(function(input, output){
       clicked <- "section7"
     } else if(input$tabs == "Rotorua" || input$tabs == "Picton"){
       clicked <- "section8"
-    } 
+    }
+  
     
     if(!is.null(clicked)) {
       shinyjs::runjs(paste0("scrollToElement(", clicked, ")"))
     }
   })
-  
   
   # The page. Sections are generated individually and rendered together with this output
   # ------------------------------------------------------------------------------------------------
@@ -50,7 +50,7 @@ shinyServer(function(input, output){
   })
   
   output$new_zealand_section <- renderUI({
-    div(class="overview-section",style="padding-bottom: 1000px",
+    div(class="overview-section",style="padding-bottom: 900px",
         div(class="overview-section-title", "New Zealand"),
         m <- leaflet(height=400, width=600) %>%
           addTiles() %>%  # Add default OpenStreetMap map tiles
