@@ -40,26 +40,6 @@ You can try out the app [here]( https://rshiny.epi-interactive.com/apps/scrollin
  ```
 2. This function handles which tab is active and the click event. It also handles the differences between the type of tab selected. For instance it checks if the tab selected was a drop-down or selection tab.
 ``` r
-verticalTabsInput <- function(inputId, tabs, active=NULL) {
-  elems <- as.list(tabs)
-  
-  if(is.null(active)){
-    active <- elems[[1]]
-  }
-
-  items <- list()
-  for(num in 1:length(elems)) {
-    elem <- elems[[num]]
-    
-    if(typeof(elem) == "list") {
-      elemName <- names(elems)[num]
-      
-      subitems <- lapply(elem, function(x) {
-        div(class=paste("vertical-tab", if(x==active){"active"}),
-                    x
-                )
-      })
-      
       G_NZ_towns <- list(
         "North island towns" = "North_island_towns",
         "South island towns" = "South_island_towns",
@@ -79,17 +59,6 @@ verticalTabsInput <- function(inputId, tabs, active=NULL) {
               )
           )
     }
-    else {
-      items[[num]] <- div(class=paste("vertical-tab", if(elem==active){"active"}),
-                          onclick = paste0("toggleVerticalTabDropdown('", str_to_lower(elem), "', true);"),
-                          elem
-              )
-    }
-  }
-  div(class="vertical-tab-binding", id=inputId,
-      items
-  )
-}
 ```
 3. This function hides all other drop-downs when one tab is selected and shows the selected tab
 
