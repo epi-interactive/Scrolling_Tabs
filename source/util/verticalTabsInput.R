@@ -31,7 +31,8 @@ verticalTabsInput <- function(inputId, tabs, active=NULL) {
       items[[num]] <- div(class = "vt-dropdown", 
                           div(id = item_id, class=paste("vertical-tab", if(elemName==active){"active"}),
                               onclick = paste0("toggleVerticalTabDropdown('", item_id, "', true);"),
-                              elemName
+                              elemName,
+                              img(class="dpArrow",src= "img/arrow.png")
                           ),
           div(class = "vt-dropdown-content",
               style = "display: none;",
