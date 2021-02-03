@@ -1,8 +1,8 @@
 # Scrolling tabs
-This build vertical tab bar which can be used to smoothly navigate to the chosen elements by clicking on the approriate tab. When dealing with long webpages scrolling tabs are more convenient to use. The user chooses which title to explore from a tab selection rather than scrolling to the title. This can be done using scroll to element function implemented in JavaScript.
+This builds vertical tab bar which can be used to smoothly navigate to the chosen elements by clicking on the appropriate tab. When dealing with long webpages scrolling tabs are more convenient to use. The user chooses which title to explore from a tab selection rather than scrolling to the title. This can be done using "scroll-to-element" function implemented in JavaScript.
 
 
-You can try out the app [here](https://shiny.epi-interactive.com/modal)
+You can try out the app [here]( https://rshiny.epi-interactive.com/apps/scrolling-tabs)
 
 
 <kbd>![alt text](Scrolling_tab.PNG)</kbd>
