@@ -134,7 +134,7 @@ const toggleVerticalTabDropdown = function(id, isDropdown) {
     .
     .
  ```
-5. The scroll to Element JavaScript function is also called every time a tab is clicked, and the name of the tab is passed as a  parameter.
+5. The "scroll-to-element" JavaScript function is also called every time a tab is clicked, and the name of the tab is passed as a  parameter.
 
  ``` r
  const scrollToElement = function(element) {
