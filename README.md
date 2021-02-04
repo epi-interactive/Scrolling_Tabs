@@ -38,7 +38,7 @@ You can try out the app <a href="https://rshiny.epi-interactive.com/apps/scrolli
                                             
              )
  ```
-2. This function handles which tab is active and the click event. It also handles the differences between the type of tab selected. For instance, it checks if the tab selected was a drop-down or selection tab.
+2. This R function handles which tab is active and the click event. It also handles the differences between the type of tab selected. For instance, it checks if the tab selected was a drop-down or selection tab.
 ``` r
       G_NZ_towns <- list(
         "North island towns" = "North_island_towns",
