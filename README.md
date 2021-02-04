@@ -2,14 +2,14 @@
 This builds a vertical tab bar which can be used to smoothly navigate to the chosen elements by clicking on the appropriate tab. When dealing with long web pages, scrolling tabs are more convenient to use. The user chooses which title to explore from a tab selection rather than scrolling to the title. This can be done using "scroll-to-element" function implemented in JavaScript.
 
 
-You can try out the app [here]( https://rshiny.epi-interactive.com/apps/scrolling-tabs)
+You can try out the app [here]( <a href="https://rshiny.epi-interactive.com/apps/scrolling-tabs" target="_blank"></a>)
 
 
 <kbd>![alt text](Scrolling_tab.PNG)</kbd>
 
 
 # How it works
-1. A vertical tab input is created which contains a list of names of all tabs.
+1. A vertical tab input is created in the ui.R, which contains a list of names of all tabs.
  ``` r
  verticalTabsInput("tabs",
           list(
@@ -38,7 +38,7 @@ You can try out the app [here]( https://rshiny.epi-interactive.com/apps/scrollin
                                             
              )
  ```
-2. This function handles which tab is active and the click event. It also handles the differences between the type of tab selected. For instance it checks if the tab selected was a drop-down or selection tab.
+2. This function handles which tab is active and the click event. It also handles the differences between the type of tab selected. For instance, it checks if the tab selected was a drop-down or selection tab.
 ``` r
       G_NZ_towns <- list(
         "North island towns" = "North_island_towns",
@@ -60,7 +60,7 @@ You can try out the app [here]( https://rshiny.epi-interactive.com/apps/scrollin
           )
     }
 ```
-3. This function hides all other drop-downs when one tab is selected and shows the selected tab
+3. This JavaScript function hides all other drop-downs when one tab is selected and shows the selected tab
 
 ``` r
 const toggleVerticalTabDropdown = function(id, isDropdown) {
@@ -78,7 +78,7 @@ const toggleVerticalTabDropdown = function(id, isDropdown) {
 }
 ``` 
 
-4. The observe Event reactive function is used to handle the events on the side bar. If the tab is clicked a value based on the name of the tab that was clicked is stored in a variable.
+4. The observe Event reactive function is used to handle the events on the side bar and is added to the server.R. If the tab is clicked, a value based on the name of the tab that was clicked, i.e the section number, is stored in a variable.
  ``` r
     observeEvent(input$tabs, {
     
@@ -121,4 +121,4 @@ const toggleVerticalTabDropdown = function(id, isDropdown) {
   }
 };
 ```
-6. Each section is rendered using render UI reactive function 
+6. Each section is rendered using render UI reactive function in the server.R
