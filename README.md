@@ -121,4 +121,4 @@ const toggleVerticalTabDropdown = function(id, isDropdown) {
   }
 };
 ```
-7. Each section is rendered using render UI reactive function 
+6. Each section is rendered using render UI reactive function 
