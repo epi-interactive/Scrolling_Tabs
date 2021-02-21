@@ -2,7 +2,7 @@
 This builds a vertical tab bar which can be used to smoothly navigate to the chosen elements by clicking on the appropriate tab. When dealing with long web pages, scrolling tabs are more convenient to use. The user chooses which title to explore from a tab selection rather than scrolling to the title. This can be done using "scroll-to-element" function implemented in JavaScript.
 
 
-You can try out the app <a href="https://rshiny.epi-interactive.com/apps/scrolling-tabs" target="_blank" rel="noopener noreferrer">Here</a>
+You can try out the app <a href="https://rshiny.epi-interactive.com/apps/scrolling-tabs" target="_blank" rel="noopener noreferrer">here</a>
 
 
 <kbd>![alt text](Scrolling_tab.PNG)</kbd>
@@ -60,7 +60,7 @@ You can try out the app <a href="https://rshiny.epi-interactive.com/apps/scrolli
           )
     }
 ```
-3. This JavaScript function hides all other drop-downs when one tab is selected and shows the selected tab
+3. This JavaScript function hides all other drop-downs when one tab is selected and shows the selected tab.
 
 ``` r
 const toggleVerticalTabDropdown = function(id, isDropdown) {
@@ -121,4 +121,4 @@ const toggleVerticalTabDropdown = function(id, isDropdown) {
   }
 };
 ```
-6. Each section is rendered using render UI reactive function in the server.R
+6. Each section is rendered using render UI reactive function in the server.R.
