@@ -48,6 +48,6 @@ verticalTabsInput <- function(inputId, tabs, active=NULL) {
     }
   }
   div(class="vertical-tab-binding", id=inputId,
-      items
+      items,img(class="tab-logo",src= "img/Epi_Logo_PoweredBy_HZ_Outline_RGB_REV-01.png")
   )
 }

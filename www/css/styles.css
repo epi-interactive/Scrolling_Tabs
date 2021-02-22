@@ -447,6 +447,10 @@ h4 {
     border-bottom: none;
 }
 
+.active .dpArrow{
+  transform: rotate(90deg)
+}
+
 /* 
 ========================================================================================================================================
 ========================================================= OVERVIEW PAGE STYLES START ===================================================
@@ -514,6 +518,7 @@ h4 {
 .tab-logo{
   position:inherit;
   width:300px;
+  margin-top: 150px;
 }
 .imgDiv{
   position:absolute;
@@ -541,5 +546,4 @@ h4 {
 .dpArrow{
   width: 20px;
   margin-left: 135px;
-  transform: rotate(90deg)
 }
