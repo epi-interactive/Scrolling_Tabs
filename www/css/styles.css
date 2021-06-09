@@ -439,6 +439,7 @@ h4 {
     border-bottom: 1px solid #ffffff;
     color: #ffffff;
     cursor: pointer;
+    display: flex;
 }
 
 .vertical-tab.active {
@@ -545,5 +546,5 @@ h4 {
 
 .dpArrow{
   width: 20px;
-  margin-left: 135px;
+  margin-left: auto;
 }
