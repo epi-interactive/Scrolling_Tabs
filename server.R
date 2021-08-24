@@ -21,7 +21,7 @@ shinyServer(function(input, output){
     clicked <- gsub(" |\n", "", input$tabs)
     headings <- c("NewZealandMap", "NorthIslandtowns", "SouthIslandtowns")
     
-    if(!is.null(clicked) & !clicked %in% headings) {
+    if(!is.null(clicked) & clicked !="" & !clicked %in% headings) {
       shinyjs::runjs(paste0("scrollToElement(", clicked, ")"))
     }
   })
