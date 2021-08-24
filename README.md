@@ -42,8 +42,7 @@ You can try out the app <a href="https://rshiny.epi-interactive.com/apps/scrolli
 ``` r
       G_NZ_towns <- list(
         "North Island towns" = "North_island_towns",
-        "South Island towns" = "South_island_towns",
-        "New Zealand Map"    = "new_zealand_section"
+        "South Island towns" = "South_island_towns"
       )
       
       item_id <- G_NZ_towns[names(G_NZ_towns) == elemName]
