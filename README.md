@@ -79,13 +79,13 @@ const toggleVerticalTabDropdown = function(id, isDropdown) {
 
 4. The observe Event reactive function is used to handle the events on the side bar and is added to the server.R. If the tab is clicked, a value based on the name of the tab that was clicked, i.e the section number, is stored in a variable.
  ``` r
-    observeEvent(input$tabs, {
-       clicked <- gsub(" |\n", "", input$tabs)
-       headings <- c("NewZealandMap", "NorthIslandtowns", "SouthIslandtowns")
+  observeEvent(input$tabs, {
+     clicked <- gsub(" |\n", "", input$tabs)
+     headings <- c("NewZealandMap", "NorthIslandtowns", "SouthIslandtowns")
     
-       if(!is.null(clicked) & !clicked %in% headings) {
-          shinyjs::runjs(paste0("scrollToElement(", clicked, ")"))
-       }
+     if(!is.null(clicked) & !clicked %in% headings) {
+        shinyjs::runjs(paste0("scrollToElement(", clicked, ")"))
+     }
   })
  ```
 5. The "scroll-to-element" JavaScript function is also called every time a tab is clicked, and the name of the tab is passed as a  parameter.
