@@ -17,7 +17,6 @@ navigator.sayswho= (function(){
 
 
 const scrollToElement = function(element) {
-  console.log(element);
   if(navigator.sayswho.indexOf("IE") > -1) {
     $("html, body").animate({
         scrollTop: element.offsetTop

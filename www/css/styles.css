@@ -1,40 +1,16 @@
-/* 
-========================================================================================================================================
-========================================================= GLOBAL STYLES BEGIN =========================================================
-========================================================================================================================================
-*/
-
 html, body{
   font-family: 'Fira Sans', sans-serif;
   height: 100%;
   scroll-behavior: smooth;
   background-color: #FFFFFF;
   color: #585454;
-}
-
-
-/*
----------------------------------------------------------------------------------------------------------------------------------------
-------------------------------------------------------------- PAGE LAYOUT -------------------------------------------------------------
----------------------------------------------------------------------------------------------------------------------------------------
-*/
-
-.navPage {
-    flex: 1 0 auto;
-    display: -ms-flexbox;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
+  margin: 0;
 }
 
 .flex-page, .flex-page-row {
     flex: 1 0 auto;
     display: flex;
     flex-direction: column;
-}
-
-.flex-page {
-
 }
 
 .flex-page-row {
@@ -54,164 +30,10 @@ html, body{
   align-items: center;
 }
 
-.content-pad {
-    overflow: hidden;
-}
-
-.content-pad-30 > div {
-    padding-left: 30px;
-    padding-right: 40px;
-}
-
 .content-pad > div {
-    padding-left: 40px;
-    padding-right: 40px;
+    padding: 40px;
 }
 
-.sidebar-filters {
-    /*margin-bottom: 140px;*/
-}
-
-.shiny-output-error-validation {
-    color: #2c463b;
-    height: auto!important;
-    background: #ffffff;
-    padding: 10px;
-    border: solid 3px #2c463b;
-    margin: 40px 0;
-    font-size: 18px;
-    overflow: hidden;
-    display: inline-flex;
-    width: 100%;
-    align-items: center;
-}
-
-.shiny-output-error-validation:before {
-    color: #2c463b;
-    content: "\f071";
-    font-family: FontAwesome;
-    padding-right: 10px;
-    transition: color ease 0.35s;
-    font-size: 40px;
-}
-
-.sticky {
-    position: fixed;
-}
-
-
-/*
----------------------------------------------------------------------------------------------------------------------------------------
----------------------------------------------------------------- NAV TABS -------------------------------------------------------------
----------------------------------------------------------------------------------------------------------------------------------------
-*/
-
-ul.nav.nav-pills {
-    margin-bottom: 20px;
-}
-
-.nav-pills>li.active>a, .nav-pills>li.active>a:hover, .nav-pills>li.active>a:focus {
-    border-color: #0ab58f;
-    background-color: #0ab58f;
-}
-
-.nav-pills>li>a {
-    border-radius: 0;
-    background-color: #fff;
-    color: #0ab58f;
-    font-weight: bold;
-    border: solid 1px #0ab58f;
-    padding: 5px;
-}
-
-.nav-pills>li+li {
-    margin-left: 10px;
-}
-
-.nav>li>a:hover, .nav>li>a:focus {
-    background: transparent;
-}
-
-
-/*
----------------------------------------------------------------------------------------------------------------------------------------
----------------------------------------------------------------- HEADER -------------------------------------------------------------
----------------------------------------------------------------------------------------------------------------------------------------
-*/
-
-.header {
-    background-color: #585454;
-    color: #fff7ed;
-    width: 100%;
-    padding: 15px 40px;
-    overflow: hidden;
-    box-sizing: border-box;
-    display: flex;
-    justify-content: space-between;
-}
-
-.white-links{
-  display: flex;
-  margin-top: 10px;
-  font-weight: bold;    
-  font-size: 16px;
-}
-
-.white-links li a:hover{
-  background-color:transparent;
-  color: #ddd;
-}
-
-.white-links a{
-  color: #fff7ed;
-  font-size: 16pt;
-}
-
-.white-links > li {
-    border-top: solid 2px #fff7ed;
-    margin-right: 20px;
-    float: none;
-}
-
-.navbar-collapse {
-    padding: 0 40px;
-}
-
-.navbar {
-    min-height: 30px;
-    margin-bottom: 0;
-    border: none;
-    border-radius: 0;
-}
-
-
-.navbar-moh .navbar-nav>.active>a, .navbar-moh .navbar-nav>.active>a:hover, .navbar-moh .navbar-nav>.active>a:focus {
-    font-weight: bold;
-}
-
-.navbar-nav>li>a {
-    padding: 5px 0;
-}
-
-.navbar-small>li>a {
-    padding: 5px 20px;
-}
-
-.header-wrapper {
-    width: 100%;
-    height: 160px;
-    top: 0;
-    position: fixed;
-    box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.1);
-    z-index: 1000;
-}
-
-
-/*
----------------------------------------------------------------------------------------------------------------------------------------
----------------------------------------------------------------- SIDEBAR --------------------------------------------------------------
----------------------------------------------------------------------------------------------------------------------------------------
-*/
 
 .flex-sidebar {
     background-color: #00ADD8;
@@ -224,68 +46,6 @@ ul.nav.nav-pills {
     justify-content: space-between;
 }
 
-.header-page-sidebar {
-    background-color: #c2d9ba;
-    flex-direction: column;
-    display: flex;
-    width: 20%;
-}
-
-.panel.filter-panel {
-    margin-bottom: 0;
-    background-color: transparent;
-    border-radius: 0;
-    -webkit-box-shadow: none;
-    box-shadow: none;
-}
-
-.filter-panel {
-    padding: 25px 0;
-    color: #fff;
-}
-.sidebar-underline {
-    border-bottom: solid 2px #808285;
-}
-
-.filter-title.interactive {
-    cursor: pointer;
-}
-
-.filter-title {
-    font-size: 17px;
-    color: #FFF;
-    transition: color ease 0.35s;
-    display: inline-block;
-    font-weight: bold;
-    padding-left: 10px;
-    padding-bottom: 10px;
-}
-
-.filter-body {
-    padding-left: 10px;
-    color: #585454;
-}
-
-.filter-body .form-group {
-    margin: 15px 0;
-}
-
-.filter-body .control-label {
-    color: #585454;
-    font-weight: normal;
-}
-
-button.btn.btn-moh {
-    color: #fff;
-    background: #2c463b;
-    border: solid 1px #fff;
-    white-space: normal;
-}
-
-.pad-left-10 {
-    padding-left: 10px;
-}
-
 .vertical-tabs.sidebar-fixed {
   position: fixed;
 }
@@ -294,147 +54,8 @@ button.btn.btn-moh {
   overflow-y: auto;
 }
 
-/*
----------------------------------------------------------------------------------------------------------------------------------------
------------------------------------------------------------------ TYPOGRAPHY ----------------------------------------------------------
----------------------------------------------------------------------------------------------------------------------------------------
-*/
-
-h1, h2, h3, h4, h5 {
-  font-family: 'Montserrat', sans-serif;
-  font-weight: bold;
-}
-
-.mh1{
-  font-size: 48px;
-  font-family: 'Montserrat';
-  font-weight: bold;
-}
-
-.mh2{
-  font-size: 24px;
-  font-family: 'Montserrat';
-  font-weight: bold;
-  padding-bottom: 15px;
-}
-
-.mh3{
-  font-size: 24px;
-  font-family: 'Montserrat';
-  font-weight: bold;
-  padding-bottom: 10px;
-}
-
-.mh4{
-  margin-top: 30px;
-  font-family: 'Montserrat', sans-serif;
-}
-
-h4 {
-  font-size: 22px;
-}
-
-.title{
-  color: #2c463b;
-}
-
-.section-title {
-    font-size: 22px;
-    font-weight: bold;
-    margin-bottom: 20px;
-}
-
-.header-title {
-    display: inline-block;
-    font-family: 'Montserrat', sans-serif;
-    color: #fff7ed;
-    font-size: 25px;
-    font-weight: bold;
-    text-align: center;
-    margin-top: 8px;
-    vertical-align: middle;
-}
-
-.static-text {
-    height: 34px;
-    padding: 6px 12px 6px 0;
-    font-size: 14px;
-    line-height: 1.42857143;
-    color: #585454;
-    font-weight: bold;
-}
-
-.static-title {
-    color: #585454;
-    font-size: 27px;
-    font-weight: bold;
-    margin: 15px 0;
-}
-
-.static-l1 {
-    color: #585454;
-    font-size: 17px;
-    font-weight: bold;
-    border-bottom: solid 1px #585454;
-    margin-bottom: 15px;
-}
-
-
-/* 
-========================================================================================================================================
-======================================================= INDICATOR OVERVIEW STYLES BEGIN ================================================
-========================================================================================================================================
-*/
-
-.overview-body {
-    display: flex;
-    flex-wrap: wrap;
-    width: 100%;
-}
-
-.overview-item {
-    width: 50%;
-    padding: 10px;
-}
-
-.overview-item-header {
-    display: flex;
-    align-items: center;
-}
-
-.overview-item-icon {
-    width: 40px;
-    height: 40px;
-    background: #0ab58f;
-    border-radius: 20px;
-}
-
-.overview-item-title {
-    font-size: 20px;
-    margin-left: 10px;
-    color: #585454;
-}
-
-.overview-item-title a, .overview-item-title a:hover {
-    color: #585454;
-}
-
-.overview-item-body {
-    padding-left: 50px;
-}
-
-.indicator-item {
-  cursor: pointer;
-}
-
-/* 
-========================================================================================================================================
-========================================================= METHODOLOGY STYLES START =====================================================
-========================================================================================================================================
-*/
 
 .vertical-tab {
-    width: 100%;
     padding: 10px 15px;
     border-bottom: 1px solid #ffffff;
     color: #ffffff;
@@ -452,26 +73,8 @@ h4 {
   transform: rotate(90deg)
 }
 
-/* 
-========================================================================================================================================
-========================================================= OVERVIEW PAGE STYLES START ===================================================
-========================================================================================================================================
-*/
-
 .vertical-tabs {
   padding: 30px; 
- position: fixed;
-    width: 20%;
-}
-
-
-.overview-title-section {
-  margin-bottom: 40px;
-}
-
-.overview-title-section .overview-title{
-  margin-bottom: 0;
-  margin-top: 30px;
 }
 
 .overview-subtitle {
@@ -485,34 +88,13 @@ h4 {
   font-size: 16px;
   font-weight: bold;
   border-bottom: 1px solid #585454;
-  margin-bottom: 5px;
-}
-
-.overview-section-title.no-line {
-  border: none;
-  
+  margin-bottom: 20px;
 }
 
 .overview-section {
   width: 75%;
   margin-bottom: 40px;
-}
-
-.overview-section.wide {
-  width: 100%;
-  overflow-x: auto;
-}
-
-.overview-section-content {
-      padding-right: 10%;
-}
-
-.overview-content-group {
-    margin-bottom: 50px;
-}
-
-.overview-section img {
-    margin: 20px 0;
+  padding-bottom: 40px;
 }
 
 
@@ -527,10 +109,6 @@ h4 {
   bottom:-500px;
 }
 
-#new_zealand_section{
-  padding-top: 25px;
-}
-
 .vt-dropdown-content{
   padding-left: 50px;
   font-weight: normal;
@@ -538,10 +116,6 @@ h4 {
 
 #tabs:first-child{
   font-weight: bold;
-}
-
-.overview-section-title{
-  margin-bottom: 20px;
 }
 
 .dpArrow{

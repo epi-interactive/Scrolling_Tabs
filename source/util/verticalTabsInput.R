@@ -1,5 +1,3 @@
-library(stringr)
-
 verticalTabsInput <- function(inputId, tabs, active=NULL) {
   elems <- as.list(tabs)
   
@@ -8,6 +6,7 @@ verticalTabsInput <- function(inputId, tabs, active=NULL) {
   }
 
   items <- list()
+  
   for(num in 1:length(elems)) {
     elem <- elems[[num]]
     
@@ -21,9 +20,8 @@ verticalTabsInput <- function(inputId, tabs, active=NULL) {
       })
       
       G_NZ_towns <- list(
-        "North island towns" = "North_island_towns",
-        "South island towns" = "South_island_towns",
-        "New Zealand Map"    = "new_zealand_section"
+        "North Island towns" = "North_island_towns",
+        "South Island towns" = "South_island_towns"
       )
       
       item_id <- G_NZ_towns[names(G_NZ_towns) == elemName]
@@ -42,7 +40,7 @@ verticalTabsInput <- function(inputId, tabs, active=NULL) {
     }
     else {
       items[[num]] <- div(class=paste("vertical-tab", if(elem==active){"active"}),
-                          onclick = paste0("toggleVerticalTabDropdown('", str_to_lower(elem), "', true);"),
+                          onclick = paste0("toggleVerticalTabDropdown('new_zealand_section', true);"),
                           elem
               )
     }
