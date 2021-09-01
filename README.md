@@ -8,7 +8,7 @@ You can try out the app <a href="https://rshiny.epi-interactive.com/apps/scrolli
 <kbd>![alt text](Scrolling_tab.PNG)</kbd>
 
 
-# How it works
+## How it works
 1. A vertical tab input is created in the ui.R, which contains a list of names of all tabs.
  ``` r
  verticalTabsInput("tabs",
@@ -107,3 +107,14 @@ const toggleVerticalTabDropdown = function(id, isDropdown) {
 };
 ```
 6. Each section is rendered using render UI reactive function in the server.R.
+
+
+
+
+---
+
+Code created by [Epi-interactive](https://www.epi-interactive.com) 
+
+As always, our expert team is here to help if you want custom training, would like to take your dashboards to the next level or just need an urgent fix to keep things running. Just get in touch for a chat.
+
+[https://www.epi-interactive.com/contact](https://www.epi-interactive.com/contact)
