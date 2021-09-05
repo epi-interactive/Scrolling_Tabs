@@ -40,7 +40,7 @@ html, body{
     flex-direction: column;
     display: flex;
     width: 20%;
-    height: calc(100% - 0px);
+    height: 100%;
     position: fixed;
     left: 0;
     justify-content: space-between;
