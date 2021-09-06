@@ -1,3 +1,9 @@
+##################################
+# Created by EPI-interactive
+# 04 Feb 2021
+# https://www.epi-interactive.com
+##################################
+
 verticalTabsInput <- function(inputId, tabs, active=NULL) {
   elems <- as.list(tabs)
   
